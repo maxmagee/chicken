@@ -73,7 +73,8 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
     width: '100%',
-    padding: 20
+    paddingBottom: 20,
+    paddingHorizontal: 10
   },
   buttonContainer: {
     width: '100%'
