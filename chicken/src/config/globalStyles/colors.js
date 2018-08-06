@@ -2,7 +2,7 @@ const colors = {
   darkGray: '#756F64',
   red: '#DE0031',
   white: '#FFFFFF',
-  gradiants: {
+  gradients: {
     redButton: {
       upper: '#F53F66',
       lower: '#BC0624'

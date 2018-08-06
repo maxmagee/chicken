@@ -4,8 +4,16 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { colors } from '../../config/globalStyles';
 
+import MenuSundayScreen from '../menuTab/MenuSundayScreen';
+
 class MenuTabScreen extends Component {
-  render() {
+  renderDaySensitivePage() {
+    const currentDate = new Date();
+
+    if (currentDate.getDay() === 0) {
+      return <MenuSundayScreen />;
+    }
+
     return (
       <View style={styles.errorContainer}>
         <StatusBar barStyle="light-content" />
@@ -14,6 +22,10 @@ class MenuTabScreen extends Component {
         </Text>
       </View>
     );
+  }
+
+  render() {
+    return this.renderDaySensitivePage();
   }
 }
 
