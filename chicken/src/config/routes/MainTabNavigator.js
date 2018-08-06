@@ -65,10 +65,7 @@ const MainTabNavigator = createBottomTabNavigator(
       activeTintColor: colors.red,
       inactiveBackgroundColor: colors.white,
       inactiveTintColor: colors.darkGray,
-      labelStyle: {
-        fontFamily: globalStyles.bottomTabBarLabel.fontFamily,
-        fontSize: globalStyles.bottomTabBarLabel.fontSize
-      },
+      labelStyle: globalStyles.bottomTabBarLabel,
       style: {
         backgroundColor: 'white',
         paddingTop: 5,
