@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import { Ionicons, MaterialCommunityIcons, Octicons, SimpleLineIcons } from '@expo/vector-icons';
 
-import { colors } from '../globalStyles';
+import { colors, globalStyles } from '../globalStyles';
 
 import AccountTabScreen from '../../screens/mainTabs/AccountTabScreen';
 import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
@@ -66,8 +66,8 @@ const MainTabNavigator = createBottomTabNavigator(
       inactiveBackgroundColor: colors.white,
       inactiveTintColor: colors.darkGray,
       labelStyle: {
-        fontSize: 14,
-        fontFamily: 'Arial'
+        fontFamily: globalStyles.bottomTabBarLabel.fontFamily,
+        fontSize: globalStyles.bottomTabBarLabel.fontSize
       },
       style: {
         backgroundColor: 'white',
