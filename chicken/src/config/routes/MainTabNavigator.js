@@ -9,7 +9,7 @@ import AccountTabScreen from '../../screens/mainTabs/AccountTabScreen';
 import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
 import MyOrderTabScreen from '../../screens/mainTabs/MyOrderTabScreen';
 import RewardsNavigator from './RewardsNavigator';
-import ScanTabScreen from '../../screens/mainTabs/ScanTabScreen';
+import ScanNavigator from './ScanNavigator';
 
 const tabIconSize = 26;
 
@@ -32,7 +32,7 @@ const MainTabNavigator = createBottomTabNavigator(
       }
     },
     ScanTab: {
-      screen: ScanTabScreen,
+      screen: ScanNavigator,
       navigationOptions: {
         tabBarLabel: 'Scan',
         tabBarIcon: ({ tintColor }) => (
