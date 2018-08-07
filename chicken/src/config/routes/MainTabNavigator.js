@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
 import { Ionicons, MaterialCommunityIcons, Octicons, SimpleLineIcons } from '@expo/vector-icons';
 
@@ -7,7 +8,7 @@ import { colors, globalStyles } from '../globalStyles';
 import AccountTabScreen from '../../screens/mainTabs/AccountTabScreen';
 import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
 import MyOrderTabScreen from '../../screens/mainTabs/MyOrderTabScreen';
-import RewardsTabScreen from '../../screens/mainTabs/RewardsTabScreen';
+import RewardsNavigator from './RewardsNavigator';
 import ScanTabScreen from '../../screens/mainTabs/ScanTabScreen';
 
 const tabIconSize = 26;
@@ -24,7 +25,7 @@ const MainTabNavigator = createBottomTabNavigator(
       }
     },
     RewardsTab: {
-      screen: RewardsTabScreen,
+      screen: RewardsNavigator,
       navigationOptions: {
         tabBarLabel: 'Rewards',
         tabBarIcon: ({ tintColor }) => <Octicons name="gift" size={tabIconSize} color={tintColor} />
@@ -70,6 +71,16 @@ const MainTabNavigator = createBottomTabNavigator(
         backgroundColor: 'white',
         paddingTop: 5,
         height: 50
+      }
+    },
+    navigationOptions: {
+      tabBarOnPress: ({ navigation, defaultHandler }) => {
+        if (navigation.state.routeName === 'MenuTab') {
+          StatusBar.setBarStyle('light-content');
+        } else {
+          StatusBar.setBarStyle('dark-content');
+        }
+        defaultHandler();
       }
     }
   }

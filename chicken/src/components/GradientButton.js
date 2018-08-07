@@ -7,7 +7,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { colors, globalStyles } from '../config/globalStyles';
 
 const GradientButton = ({ label, onPress }) => (
-  <TouchableHighlight onPress={onPress}>
+  <TouchableHighlight onPress={onPress} underlayColor="transparent">
     <LinearGradient
       colors={[colors.gradients.redButton.upper, colors.gradients.redButton.lower]}
       style={styles.gradientStyle}
