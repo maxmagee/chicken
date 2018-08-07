@@ -26,6 +26,27 @@ const globalStyles = {
     fontWeight: 'bold',
     lineHeight: 48,
     textAlign: 'center'
+  },
+  callout: {
+    color: colors.white,
+    fontFamily: 'Arial',
+    fontSize: 27,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  navigationHeaderTitle: {
+    color: colors.darkGray,
+    fontFamily: 'Arial',
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  mainStatement: {
+    color: colors.darkGray,
+    fontFamily: 'Arial',
+    fontSize: 16,
+    lineHeight: 19,
+    textAlign: 'center'
   }
 };
 
