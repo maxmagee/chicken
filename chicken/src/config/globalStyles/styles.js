@@ -35,6 +35,13 @@ const globalStyles = {
     textAlign: 'center',
     lineHeight: 34
   },
+  link: {
+    color: colors.red,
+    fontFamily: 'Arial',
+    fontSize: 13,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
   navigationHeaderTitle: {
     color: colors.darkGray,
     fontFamily: 'Arial',

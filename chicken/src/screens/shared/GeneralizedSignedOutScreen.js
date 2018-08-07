@@ -18,6 +18,7 @@ class GeneralizedSignedOutScreen extends Component {
           <View style={styles.bottomTextContainer}>
             <Text style={globalStyles.mainStatement}>{this.props.mainText}</Text>
           </View>
+          <View style={this.props.childStyles}>{this.props.children}</View>
           <View style={styles.buttonContainer}>
             <GradientButton label="Sign in to Chick-fil-A One" onPress={this.handleButtonPress} />
           </View>
@@ -68,7 +69,7 @@ const styles = EStyleSheet.create({
     paddingTop: 45
   },
   calloutContainer: {
-    width: 225
+    width: 250
   },
   bottomContainer: {
     flex: 1,
@@ -77,7 +78,7 @@ const styles = EStyleSheet.create({
     width: '100%',
     paddingBottom: 20,
     paddingHorizontal: 10,
-    paddingTop: 458,
+    paddingTop: 455,
     backgroundColor: colors.white
   },
   bottomTextContainer: {

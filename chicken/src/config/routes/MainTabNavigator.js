@@ -5,7 +5,7 @@ import { Ionicons, MaterialCommunityIcons, Octicons, SimpleLineIcons } from '@ex
 
 import { colors, globalStyles } from '../globalStyles';
 
-import AccountTabScreen from '../../screens/mainTabs/AccountTabScreen';
+import AccountNavigator from './AccountNavigator';
 import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
 import MyOrderTabScreen from '../../screens/mainTabs/MyOrderTabScreen';
 import RewardsNavigator from './RewardsNavigator';
@@ -41,7 +41,7 @@ const MainTabNavigator = createBottomTabNavigator(
       }
     },
     AccountTab: {
-      screen: AccountTabScreen,
+      screen: AccountNavigator,
       navigationOptions: {
         tabBarLabel: 'Account',
         tabBarIcon: ({ tintColor }) => (
