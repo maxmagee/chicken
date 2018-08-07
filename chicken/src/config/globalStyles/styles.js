@@ -32,7 +32,8 @@ const globalStyles = {
     fontFamily: 'Arial',
     fontSize: 27,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    lineHeight: 34
   },
   navigationHeaderTitle: {
     color: colors.darkGray,
