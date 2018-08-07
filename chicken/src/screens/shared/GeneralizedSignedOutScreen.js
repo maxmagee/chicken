@@ -79,6 +79,8 @@ const styles = EStyleSheet.create({
   },
   bottomTextContainer: {
     paddingHorizontal: 10,
+    width: 350,
+    alignItems: 'center',
     alignSelf: 'flex-start'
   },
   buttonContainer: {
