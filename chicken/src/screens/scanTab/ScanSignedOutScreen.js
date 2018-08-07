@@ -7,7 +7,7 @@ import GeneralizedSignedOutScreen from '../shared/GeneralizedSignedOutScreen';
 
 const ScanSignedOutScreen = () => (
   <GeneralizedSignedOutScreen
-    callout="Scan to pay and earn rewards"
+    callout="Scan to pay and earn points"
     image={holdingPhone}
     mainText={`Scan your QR code and earn points with every purchase.`} // eslint-disable-line
   />

@@ -67,6 +67,9 @@ const styles = EStyleSheet.create({
     justifyContent: 'flex-start',
     paddingTop: 45
   },
+  calloutContainer: {
+    width: 225
+  },
   bottomContainer: {
     flex: 1,
     alignItems: 'center',
