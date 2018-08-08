@@ -79,6 +79,10 @@ This repository is actually the second version. I was originally replicating the
 
 However, Chick-fil-A completely redesigned their application while I was in the middle of my implementation. Consequently, I decided to start fresh on a new version and tackle the new challenges the redesign presented.
 
+After looking at their license page in the app, it appears as though they might have actually moved the app over to be completely native. I noticed several more Swift / iOS specific dependencies after looking at it in the new version (6.0+).
+
+That doesn't change the usefulness of this exercise though. Instead, if I can make my React Native version indistinguishable from a fully native app, that's even more impressive.
+
 ## Acknowledgements
 
 - [The BHW Group](https://thebhwgroup.com) for the inspiration.
