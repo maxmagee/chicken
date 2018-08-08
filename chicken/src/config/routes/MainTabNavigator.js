@@ -7,7 +7,7 @@ import { colors, globalStyles } from '../globalStyles';
 
 import AccountNavigator from './AccountNavigator';
 import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
-import MyOrderTabScreen from '../../screens/mainTabs/MyOrderTabScreen';
+import MyOrderNavigator from './MyOrderNavigator';
 import RewardsNavigator from './RewardsNavigator';
 import ScanNavigator from './ScanNavigator';
 
@@ -50,7 +50,7 @@ const MainTabNavigator = createBottomTabNavigator(
       }
     },
     MyOrderTab: {
-      screen: MyOrderTabScreen,
+      screen: MyOrderNavigator,
       navigationOptions: {
         tabBarLabel: 'My Order',
         tabBarIcon: ({ tintColor }) => (
