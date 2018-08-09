@@ -18,8 +18,8 @@ const GradientButton = ({ label, onPress }) => (
 );
 
 GradientButton.propTypes = {
-  label: PropTypes.string,
-  onPress: PropTypes.func
+  label: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired
 };
 
 const styles = EStyleSheet.create({

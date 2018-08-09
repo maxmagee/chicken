@@ -38,9 +38,10 @@ class GeneralizedSignedOutScreen extends Component {
 }
 
 GeneralizedSignedOutScreen.propTypes = {
-  buttonLabel: PropTypes.string,
   callout: PropTypes.string,
-  image: PropTypes.number,
+  children: PropTypes.element,
+  childStyles: PropTypes.number,
+  image: PropTypes.number.isRequired,
   mainText: PropTypes.string
 };
 
