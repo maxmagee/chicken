@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, TouchableOpacity, Text } from 'react-native';
+import { StatusBar, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -8,12 +8,10 @@ import { globalStyles } from '../../config/globalStyles';
 
 import GeneralizedSignedOutScreen from '../shared/GeneralizedSignedOutScreen';
 
-class RewardsSignedOutScreen extends Component {
+class AccountSignedOutScreen extends Component {
   handleTermsPress = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Terms & conditions are not available yet. Please check again later.`
-    );
+    StatusBar.setBarStyle('light-content');
+    this.props.navigation.navigate('TermsAndConditionsNavigator');
   };
 
   render() {
@@ -32,7 +30,7 @@ class RewardsSignedOutScreen extends Component {
   }
 }
 
-RewardsSignedOutScreen.propTypes = {
+AccountSignedOutScreen.propTypes = {
   navigation: PropTypes.object
 };
 
@@ -42,4 +40,4 @@ const styles = EStyleSheet.create({
   }
 });
 
-export default RewardsSignedOutScreen;
+export default AccountSignedOutScreen;
