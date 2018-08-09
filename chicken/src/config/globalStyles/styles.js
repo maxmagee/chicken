@@ -42,6 +42,13 @@ const globalStyles = {
     textAlign: 'center',
     fontWeight: 'bold'
   },
+  modalNavigationHeaderTabLabel: {
+    color: colors.modalNavigationHeaderTabActive,
+    fontFamily: 'Arial',
+    fontSize: 13,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
   navigationHeaderTitle: {
     color: colors.darkGray,
     fontFamily: 'Arial',
