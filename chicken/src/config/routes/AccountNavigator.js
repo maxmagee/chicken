@@ -5,7 +5,7 @@ import { colors, globalStyles } from '../../config/globalStyles';
 import AccountSignedOutScreen from '../../screens/accountTab/AccountSignedOutScreen';
 
 const AccountNavigator = createStackNavigator({
-  RewardsSignedOut: {
+  AccountSignedOut: {
     screen: AccountSignedOutScreen,
     navigationOptions: () => ({
       title: 'Account',
