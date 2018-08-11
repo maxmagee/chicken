@@ -25,6 +25,7 @@ const renderHeaderLeft = navigation => {
   );
 };
 
+//TODO: refactor headerStyle to be a modalNavigationHeader in gloabStyle
 const TermsAndConditionsNavigator = createStackNavigator(
   {
     TermsAndConditions: {
@@ -33,7 +34,8 @@ const TermsAndConditionsNavigator = createStackNavigator(
         title: 'Terms & Conditions',
         headerTitleStyle: globalStyles.modalNavigationHeaderTitle,
         headerStyle: {
-          backgroundColor: colors.modalNavigationHeaderBackground
+          backgroundColor: colors.modalNavigationHeaderBackground,
+          borderBottomColor: colors.modalNavigationHeaderBackground
         },
         headerLeft: renderHeaderLeft(navigation)
       })
