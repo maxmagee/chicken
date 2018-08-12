@@ -42,6 +42,32 @@ const globalStyles = {
     textAlign: 'center',
     fontWeight: 'bold'
   },
+  modalNavigationHeaderTabBar: {
+    backgroundColor: colors.modalNavigationHeaderBackground,
+    marginTop: 0,
+    paddingTop: 13,
+    borderBottomColor: colors.white,
+    borderStyle: 'solid',
+    height: 39
+  },
+  modalNavigationHeaderTabLabel: {
+    color: colors.modalNavigationHeaderTabActive,
+    fontFamily: 'Arial',
+    fontSize: 13,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  modalNavigationHeader: {
+    backgroundColor: colors.modalNavigationHeaderBackground,
+    borderBottomColor: colors.modalNavigationHeaderBackground
+  },
+  modalNavigationHeaderTitle: {
+    color: colors.white,
+    fontFamily: 'Arial',
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
   navigationHeaderTitle: {
     color: colors.darkGray,
     fontFamily: 'Arial',
