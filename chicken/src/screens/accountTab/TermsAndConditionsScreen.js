@@ -57,9 +57,10 @@ const styles = EStyleSheet.create({
   tabBarStyle: {
     backgroundColor: colors.modalNavigationHeaderBackground,
     marginTop: 0,
-    paddingTop: 20,
+    paddingTop: 13,
     borderBottomColor: colors.white,
-    borderStyle: 'solid'
+    borderStyle: 'solid',
+    height: 39
   },
   tabBarText: {}
 });
