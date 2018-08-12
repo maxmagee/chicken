@@ -25,9 +25,9 @@ const AuthModeListItem = props => (
 );
 
 AuthModeListItem.propTypes = {
-  iconImage: PropTypes.number,
-  label: PropTypes.string,
-  onPress: PropTypes.func
+  iconImage: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired
 };
 
 const styles = EStyleSheet.create({
