@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, ImageBackground, Text, View } from 'react-native';
+import { ImageBackground, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -8,7 +8,7 @@ import { colors, globalStyles } from '../../config/globalStyles';
 
 class GeneralizedSignedOutScreen extends Component {
   handleButtonPress = () => {
-    Alert.alert(`We're Sorry!`, `Signing in is not yet supported. Please check again later.`);
+    this.props.navigation.navigate('AuthenticationNavigator');
   };
 
   render() {
@@ -42,7 +42,8 @@ GeneralizedSignedOutScreen.propTypes = {
   children: PropTypes.element,
   childStyles: PropTypes.number,
   image: PropTypes.number.isRequired,
-  mainText: PropTypes.string
+  mainText: PropTypes.string,
+  navigation: PropTypes.object.isRequired
 };
 
 const styles = EStyleSheet.create({
