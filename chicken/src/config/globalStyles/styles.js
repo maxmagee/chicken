@@ -57,6 +57,10 @@ const globalStyles = {
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  modalNavigationHeader: {
+    backgroundColor: colors.modalNavigationHeaderBackground,
+    borderBottomColor: colors.modalNavigationHeaderBackground
+  },
   modalNavigationHeaderTitle: {
     color: colors.white,
     fontFamily: 'Arial',
