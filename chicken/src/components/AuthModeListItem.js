@@ -26,7 +26,7 @@ const AuthModeListItem = props => (
 
 AuthModeListItem.propTypes = {
   iconImage: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired
 };
 

@@ -82,6 +82,12 @@ const globalStyles = {
     fontSize: 16,
     lineHeight: 19,
     textAlign: 'center'
+  },
+  regularSmallText: {
+    color: colors.darkGray,
+    fontFamily: 'Arial',
+    fontSize: 11,
+    lineHeight: 16
   }
 };
 

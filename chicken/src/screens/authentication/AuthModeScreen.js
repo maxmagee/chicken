@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Alert, Text, View } from 'react-native';
+import { Alert, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { colors } from '../../config/globalStyles';
+import { colors, globalStyles } from '../../config/globalStyles';
 import iconEmail from '../../../assets/icons/icon-email.png';
 import iconFacebook from '../../../assets/icons/icon-facebook.png';
 import iconGoogle from '../../../assets/icons/icon-google.png';
@@ -31,6 +31,11 @@ class AuthModeScreen extends Component {
     );
   };
 
+  handleTermsPress = () => {
+    StatusBar.setBarStyle('light-content');
+    this.props.navigation.navigate('TermsAndConditionsNavigator');
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -51,8 +56,23 @@ class AuthModeScreen extends Component {
             labelText="Email"
             onPress={this.handleEmailPress}
           />
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>bottom</Text>
+          <View style={styles.containerBottomTerms}>
+            <View style={styles.termsTextContainer}>
+              <Text style={[globalStyles.regularSmallText, styles.termsText]}>
+                By signing in, you agree to Chick-fil-A’s{' '}
+                <TouchableOpacity onPress={this.handleTermsPress}>
+                  <Text
+                    style={[
+                      globalStyles.regularSmallText,
+                      globalStyles.termsText,
+                      { color: colors.darkBlue }
+                    ]}
+                  >
+                    Terms of Service and Privacy Notice.
+                  </Text>
+                </TouchableOpacity>
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -71,6 +91,18 @@ const styles = EStyleSheet.create({
   containerBottom: {
     flex: 1,
     backgroundColor: colors.white
+  },
+  containerBottomTerms: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 14
+  },
+  termsTextContainer: {
+    width: 195
+  },
+  termsText: {
+    textAlign: 'center'
   }
 });
 
