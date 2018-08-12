@@ -30,7 +30,7 @@ const AuthenticationNavigator = createStackNavigator(
     AuthMode: {
       screen: AuthModeScreen,
       navigationOptions: ({ navigation }) => ({
-        headerStyle: globalStyles.modalNavigationHeader,
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue),
         headerLeft: renderHeaderLeft(navigation)
       })
     }

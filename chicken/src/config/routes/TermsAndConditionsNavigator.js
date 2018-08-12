@@ -32,7 +32,7 @@ const TermsAndConditionsNavigator = createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         title: 'Terms & Conditions',
         headerTitleStyle: globalStyles.modalNavigationHeaderTitle,
-        headerStyle: globalStyles.modalNavigationHeader,
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(),
         headerLeft: renderHeaderLeft(navigation)
       })
     }
