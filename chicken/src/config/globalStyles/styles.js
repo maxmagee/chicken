@@ -42,6 +42,14 @@ const globalStyles = {
     textAlign: 'center',
     fontWeight: 'bold'
   },
+  modalNavigationHeaderTabBar: {
+    backgroundColor: colors.modalNavigationHeaderBackground,
+    marginTop: 0,
+    paddingTop: 13,
+    borderBottomColor: colors.white,
+    borderStyle: 'solid',
+    height: 39
+  },
   modalNavigationHeaderTabLabel: {
     color: colors.modalNavigationHeaderTabActive,
     fontFamily: 'Arial',

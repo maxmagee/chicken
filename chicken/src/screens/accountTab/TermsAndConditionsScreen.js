@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Dimensions, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
-import EStyleSheet from 'react-native-extended-stylesheet';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
 
 import { colors, globalStyles } from '../../config/globalStyles';
+import constants from '../../config/constants';
 
 import LegalScreen from './LegalScreen';
 import LicenseScreen from './LicenseScreen';
@@ -28,7 +28,7 @@ class TermsAndConditionsScreen extends Component {
         renderTabBar={() => (
           <TabBar
             underlineColor={colors.modalNavigationHeaderTabUnderline}
-            tabBarStyle={styles.tabBarStyle}
+            tabBarStyle={globalStyles.modalNavigationHeaderTabBar}
             tabBarTextStyle={[
               globalStyles.modalNavigationHeaderTabLabel,
               { color: colors.modalNavigationHeaderTabInactive }
@@ -37,7 +37,7 @@ class TermsAndConditionsScreen extends Component {
               globalStyles.modalNavigationHeaderTabLabel,
               { color: colors.modalNavigationHeaderTabActive }
             ]}
-            underlineHeight={4}
+            underlineHeight={constants.modalNavigationTabBarUnderlineHeight}
             tabMargin={TAB_GAP_WIDTH}
           />
         )}
@@ -52,17 +52,5 @@ class TermsAndConditionsScreen extends Component {
 TermsAndConditionsScreen.propTypes = {
   navigation: PropTypes.object
 };
-
-const styles = EStyleSheet.create({
-  tabBarStyle: {
-    backgroundColor: colors.modalNavigationHeaderBackground,
-    marginTop: 0,
-    paddingTop: 13,
-    borderBottomColor: colors.white,
-    borderStyle: 'solid',
-    height: 39
-  },
-  tabBarText: {}
-});
 
 export default TermsAndConditionsScreen;
