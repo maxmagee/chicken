@@ -8,6 +8,7 @@ const colors = {
     }
   },
   gray: '#DBE0E2',
+  inputLabelGray: '#A8ADB1',
   lightBlue: '#DCF1F6',
   modalNavigationHeaderBackground: '#3BB1C7',
   modalNavigationHeaderTabActive: '#FFFFFF',
