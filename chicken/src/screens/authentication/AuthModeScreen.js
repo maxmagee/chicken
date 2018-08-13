@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Alert, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { colors, globalStyles } from '../../config/globalStyles';
 import iconEmail from '../../../assets/icons/icon-email.png';
 import iconFacebook from '../../../assets/icons/icon-facebook.png';
 import iconGoogle from '../../../assets/icons/icon-google.png';
+import sun from '../../../assets/images/sun.png';
 
 import AuthModeListItem from '../../components/AuthModeListItem';
+import EllipsisCallout from '../../components/EllipsisCallout';
 
 class AuthModeScreen extends Component {
   handleFacebookPress = () => {
@@ -39,7 +41,17 @@ class AuthModeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.containerTop} />
+        <View style={{ flex: 1 }}>
+          <View style={[styles.containerTop, { alignItems: 'center', justifyContent: 'center' }]}>
+            <Image source={sun} height={160} width={160} />
+          </View>
+          <EllipsisCallout
+            backgroundColor={colors.lightBlue}
+            largeText="Let's get started"
+            emphasizedText="SIGN IN TO CHICK-FIL-A ONE"
+          />
+        </View>
+
         <View style={styles.containerBottom}>
           <AuthModeListItem
             iconImage={iconFacebook}
@@ -86,6 +98,8 @@ const styles = EStyleSheet.create({
   },
   containerTop: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: colors.lightBlue
   },
   containerBottom: {
