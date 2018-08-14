@@ -5,7 +5,15 @@ import { Ionicons } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 const HeaderLeftButton = props => {
-  const onPress = props.type === 'back' ? props.navigation.goBack : props.navigation.dismiss;
+  const handleClose = () => {
+    props.navigation.dismiss();
+  };
+
+  const handleGoBack = () => {
+    props.navigation.goBack();
+  };
+
+  const onPress = props.type === 'back' ? handleGoBack : handleClose;
   const iconName = props.type === 'back' ? 'ios-arrow-back' : 'md-close';
   const iconSize = 30;
 
