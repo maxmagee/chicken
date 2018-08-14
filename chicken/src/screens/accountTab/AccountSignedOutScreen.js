@@ -18,9 +18,10 @@ class AccountSignedOutScreen extends Component {
     return (
       <GeneralizedSignedOutScreen
         callout="Edit and save your account settings"
+        childStyles={styles.linkContainer}
         image={backgroundImage}
         mainText={`Personalize your account and settings.`} // eslint-disable-line
-        childStyles={styles.linkContainer}
+        navigation={this.props.navigation}
       >
         <TouchableOpacity onPress={this.handleTermsPress}>
           <Text style={globalStyles.link}>Terms & conditions</Text>

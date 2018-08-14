@@ -1,6 +1,11 @@
 import colors from './colors';
 
 const globalStyles = {
+  // Allows me to override the color of the modal navigation background and border color more easily
+  getModalNavigationHeaderStyle: (color = colors.modalNavigationHeaderBackground) => ({
+    backgroundColor: color,
+    borderBottomColor: color
+  }),
   bottomTabBarLabel: {
     fontFamily: 'Arial',
     fontSize: 11
@@ -57,10 +62,6 @@ const globalStyles = {
     fontWeight: 'bold',
     textAlign: 'center'
   },
-  modalNavigationHeader: {
-    backgroundColor: colors.modalNavigationHeaderBackground,
-    borderBottomColor: colors.modalNavigationHeaderBackground
-  },
   modalNavigationHeaderTitle: {
     color: colors.white,
     fontFamily: 'Arial',
@@ -81,6 +82,12 @@ const globalStyles = {
     fontSize: 16,
     lineHeight: 19,
     textAlign: 'center'
+  },
+  regularSmallText: {
+    color: colors.darkGray,
+    fontFamily: 'Arial',
+    fontSize: 11,
+    lineHeight: 16
   }
 };
 

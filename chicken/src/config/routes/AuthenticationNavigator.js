@@ -6,7 +6,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { colors, globalStyles } from '../../config/globalStyles';
 
-import TermsAndConditionsScreen from '../../screens/accountTab/TermsAndConditionsScreen';
+import AuthModeScreen from '../../screens/authentication/AuthModeScreen';
 
 const renderHeaderLeft = navigation => {
   // I had to wrap the icon like this to move it away from the edge
@@ -18,21 +18,19 @@ const renderHeaderLeft = navigation => {
     >
       <View style={styles.iconContainer}>
         <View style={styles.iconWrapper}>
-          <Ionicons name="md-close" size={30} color={colors.white} />
+          <Ionicons name="md-close" size={30} color={colors.darkBlue} />
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-const TermsAndConditionsNavigator = createStackNavigator(
+const AuthenticationNavigator = createStackNavigator(
   {
-    TermsAndConditions: {
-      screen: TermsAndConditionsScreen,
+    AuthMode: {
+      screen: AuthModeScreen,
       navigationOptions: ({ navigation }) => ({
-        title: 'Terms & Conditions',
-        headerTitleStyle: globalStyles.modalNavigationHeaderTitle,
-        headerStyle: globalStyles.getModalNavigationHeaderStyle(),
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue),
         headerLeft: renderHeaderLeft(navigation)
       })
     }
@@ -54,4 +52,4 @@ const styles = EStyleSheet.create({
   }
 });
 
-export default TermsAndConditionsNavigator;
+export default AuthenticationNavigator;
