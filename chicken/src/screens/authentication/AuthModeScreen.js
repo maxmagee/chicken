@@ -8,7 +8,7 @@ import iconFacebook from '../../../assets/icons/icon-facebook.png';
 import iconGoogle from '../../../assets/icons/icon-google.png';
 import sun from '../../../assets/images/sun.png';
 
-import AuthModeListItem from '../../components/AuthModeListItem';
+import AuthModeListItem from '../../components/authentication/AuthModeListItem';
 import EllipsisCallout from '../../components/EllipsisCallout';
 
 class AuthModeScreen extends Component {
