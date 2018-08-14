@@ -27,10 +27,7 @@ class AuthModeScreen extends Component {
   };
 
   handleEmailPress = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Email authentication is not available yet. Please check again later.`
-    );
+    this.props.navigation.navigate('EmailSignIn');
   };
 
   handleTermsPress = () => {
@@ -69,21 +66,23 @@ class AuthModeScreen extends Component {
             onPress={this.handleEmailPress}
           />
           <View style={styles.containerBottomTerms}>
-            <View style={styles.termsTextContainer}>
-              <Text style={[globalStyles.regularSmallText, styles.termsText]}>
-                By signing in, you agree to Chick-fil-A’s{' '}
-                <TouchableOpacity onPress={this.handleTermsPress}>
-                  <Text
-                    style={[
-                      globalStyles.regularSmallText,
-                      globalStyles.termsText,
-                      { color: colors.darkBlue }
-                    ]}
-                  >
-                    Terms of Service and Privacy Notice.
-                  </Text>
-                </TouchableOpacity>
-              </Text>
+            <View style={styles.containerBottomTermsFlex}>
+              <View style={styles.termsTextContainer}>
+                <Text style={[globalStyles.regularSmallText, styles.termsText]}>
+                  By signing in, you agree to Chick-fil-A’s{' '}
+                  <TouchableOpacity onPress={this.handleTermsPress}>
+                    <Text
+                      style={[
+                        globalStyles.regularSmallText,
+                        globalStyles.termsText,
+                        { color: colors.darkBlue }
+                      ]}
+                    >
+                      Terms of Service and Privacy Notice.
+                    </Text>
+                  </TouchableOpacity>
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -107,10 +106,13 @@ const styles = EStyleSheet.create({
     backgroundColor: colors.white
   },
   containerBottomTerms: {
+    height: 100,
+    paddingTop: 14
+  },
+  containerBottomTermsFlex: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: 14
+    justifyContent: 'flex-start'
   },
   termsTextContainer: {
     width: 195
