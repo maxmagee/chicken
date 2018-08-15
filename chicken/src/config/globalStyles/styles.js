@@ -88,6 +88,38 @@ const globalStyles = {
     fontFamily: 'Arial',
     fontSize: 11,
     lineHeight: 16
+  },
+  smallTextButton: {
+    color: colors.red,
+    fontFamily: 'Arial',
+    fontSize: 10,
+    fontWeight: 'bold'
+  },
+  textInput: {
+    label: {
+      color: colors.inputLabelGray,
+      fontFamily: 'Times New Roman',
+      fontSize: 12,
+      fontWeight: 'bold'
+    },
+    placeHolder: {
+      color: colors.inputLabelGray,
+      fontFamily: 'Times New Roman',
+      fontSize: 13,
+      fontWeight: 'bold'
+    },
+    text: {
+      color: colors.darkGray,
+      fontFamily: 'Arial',
+      fontSize: 15,
+      fontWeight: 'bold'
+    },
+    container: {
+      borderBottomColor: colors.gray,
+      borderBottomWidth: 1,
+      borderStyle: 'solid',
+      height: 26 // tweak this as needed
+    }
   }
 };
 

@@ -41,8 +41,9 @@ TermsAgreementWaiver.propTypes = {
 
 const styles = EStyleSheet.create({
   container: {
-    height: 100,
-    paddingTop: 14
+    height: 50,
+    paddingTop: 14,
+    marginBottom: 20
   },
   containerFlex: {
     flex: 1,
