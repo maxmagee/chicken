@@ -76,7 +76,7 @@ FloatingLabelTextInput.propTypes = {
 const styles = EStyleSheet.create({
   container: {
     paddingTop: 18,
-    marginBottom: 20
+    marginBottom: 10
   }
 });
 

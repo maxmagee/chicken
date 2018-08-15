@@ -64,6 +64,7 @@ class EmailSignInScreen extends Component {
             <Image source={sun} height={160} width={160} />
           </View>
           <EllipsisCallout
+            containerStyle={styles.ellipsisContainer}
             backgroundColor={colors.lightBlue}
             largeText="Let's get started"
             emphasizedText="SIGN IN TO CHICK-FIL-A ONE"
@@ -121,10 +122,15 @@ const styles = EStyleSheet.create({
     flex: 1
   },
   containerTop: {
-    //flex: 1,
-    height: 275,
+    height: 260,
     width: '100%',
     backgroundColor: colors.lightBlue
+  },
+  ellipsisContainer: {
+    backgroundColor: colors.lightBlue,
+    paddingBottom: 15,
+    paddingHorizontal: 20,
+    paddingTop: 0
   },
   imageContainer: {
     flex: 1,
@@ -135,7 +141,7 @@ const styles = EStyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     paddingBottom: 20,
-    paddingTop: 15,
+    paddingTop: 10,
     paddingHorizontal: 20
   },
   passwordButtonsContainer: {
