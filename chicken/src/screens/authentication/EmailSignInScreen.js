@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   Alert,
-  Image,
+  Animated,
+  Easing,
   Keyboard,
   Text,
   TouchableOpacity,
@@ -26,8 +27,20 @@ class EmailSignInScreen extends Component {
       emailAddress: '',
       hidePassword: true,
       password: '',
+      rotate: true,
       togglePasswordText: 'Show password'
     };
+
+    this.rotationValue = new Animated.Value(0);
+  }
+
+  componentDidUpdate() {
+    Animated.timing(this.rotationValue, {
+      toValue: this.state.rotate ? 0 : 1,
+      duration: 400,
+      easing: Easing.linear,
+      useNativeDriver: true
+    }).start();
   }
 
   handleEmailChangeText = newValue => {
@@ -60,17 +73,31 @@ class EmailSignInScreen extends Component {
     }));
   };
 
+  handleToggleRotate = () => {
+    this.setState(prevState => ({
+      rotate: !prevState.rotate
+    }));
+  };
+
   handleTermsPress = () => {
     this.props.navigation.navigate('TermsAndConditionsNavigator');
   };
 
   render() {
+    const rotationInDeg = this.rotationValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '-90deg']
+    });
+
     return (
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
           <View style={styles.containerTop}>
             <View style={styles.imageContainer}>
-              <Image source={sun} height={160} width={160} />
+              <Animated.Image
+                source={sun}
+                style={{ height: 160, width: 160, transform: [{ rotate: rotationInDeg }] }}
+              />
             </View>
             <EllipsisCallout
               containerStyle={styles.ellipsisContainer}
@@ -84,6 +111,7 @@ class EmailSignInScreen extends Component {
               label="EMAIL ADDRESS"
               value={this.state.emailAddress}
               onChangeText={this.handleEmailChangeText}
+              onFocus={this.handleToggleRotate}
               autoCapitalize="none"
               autoCorrect={false}
               clearButtonMode="while-editing"
@@ -94,6 +122,7 @@ class EmailSignInScreen extends Component {
               label="PASSWORD"
               value={this.state.password}
               onChangeText={this.handlePasswordChangeText}
+              onFocus={this.handleToggleRotate}
               autoCapitalize="none"
               autoCorrect={false}
               clearButtonMode="while-editing"

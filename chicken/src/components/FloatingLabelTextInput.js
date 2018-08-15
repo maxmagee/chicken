@@ -56,7 +56,15 @@ class FloatingLabelTextInput extends Component {
         <TextInput
           {...props}
           style={[globalStyles.textInput.container, globalStyles.textInput.text]}
-          onFocus={this.handleFocus}
+          onFocus={() => {
+            // We don't want to override a provided onFocus handler
+            // But we do need to provide our own to animate the label
+            // So call the one provided, and then call the component's built-in handler
+            if (this.props.onFocus) {
+              this.props.onFocus();
+            }
+            this.handleFocus();
+          }}
           onBlur={this.handleBlur}
           blurOnSubmit
           value={this.props.value}
