@@ -1,4 +1,5 @@
 const colors = {
+  black: '#000000',
   darkBlue: '#004F70',
   darkGray: '#596771',
   gradients: {

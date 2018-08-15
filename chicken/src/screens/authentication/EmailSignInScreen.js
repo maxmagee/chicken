@@ -11,12 +11,13 @@ import {
 } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import constants from '../../config/constants';
 import { colors, globalStyles } from '../../config/globalStyles';
 import sun from '../../../assets/images/sun.png';
 
 import EllipsisCallout from '../../components/EllipsisCallout';
 import FloatingLabelTextInput from '../../components/FloatingLabelTextInput';
-import GradientButton from '../../components/GradientButton';
+import MainActionButton from '../../components/buttons/MainActionButton';
 import TermsAgreementWaiver from '../../components/authentication/TermsAgreementWaiver';
 
 class EmailSignInScreen extends Component {
@@ -51,8 +52,15 @@ class EmailSignInScreen extends Component {
 
   handleForgotPassword = () => {
     Alert.alert(
-      `We're Sorry!'`,
+      `We're Sorry!`,
       `Forgot password functionality is not available yet. Please check again later.`
+    );
+  };
+
+  handleNewAccount = () => {
+    Alert.alert(
+      `We're Sorry!`,
+      `Creating a new account is not supported yet. Please check again later.`
     );
   };
 
@@ -63,7 +71,7 @@ class EmailSignInScreen extends Component {
   };
 
   handleSignIn = () => {
-    Alert.alert(`We're Sorry!`, `'Signing in is not available yet. Please check again later.`);
+    Alert.alert(`We're Sorry!`, `Signing in is not available yet. Please check again later.`);
   };
 
   handleTogglePassword = () => {
@@ -81,6 +89,25 @@ class EmailSignInScreen extends Component {
 
   handleTermsPress = () => {
     this.props.navigation.navigate('TermsAndConditionsNavigator');
+  };
+
+  renderActionButton = () => {
+    if (this.state.emailAddress === '' || this.state.password === '') {
+      return (
+        <MainActionButton
+          type={constants.actionButtonTypes.BUTTON_TYPE_WHITE}
+          label="Don't have an account?"
+          onPress={this.handleNewAccount}
+        />
+      );
+    }
+    return (
+      <MainActionButton
+        type={constants.actionButtonTypes.BUTTON_TYPE_RED}
+        label="Sign in"
+        onPress={this.handleSignIn}
+      />
+    );
   };
 
   render() {
@@ -143,9 +170,7 @@ class EmailSignInScreen extends Component {
             </View>
 
             <View style={{ justifyContent: 'flex-end' }}>
-              <View style={styles.buttonContainer}>
-                <GradientButton label="Sign in" onPress={this.handleSignIn} />
-              </View>
+              <View style={styles.buttonContainer}>{this.renderActionButton()}</View>
               <TermsAgreementWaiver navigation={this.props.navigation} />
             </View>
           </View>
