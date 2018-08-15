@@ -29,7 +29,10 @@ class EmailSignInScreen extends Component {
   };
 
   handleForgotPassword = () => {
-    console.log('handleForgotPassword');
+    Alert.alert(
+      `We're Sorry!'`,
+      `Forgot password functionality is not available yet. Please check again later.`
+    );
   };
 
   handlePasswordChangeText = newValue => {
@@ -39,7 +42,7 @@ class EmailSignInScreen extends Component {
   };
 
   handleSignIn = () => {
-    Alert.alert(`We're Sorry!, 'Signing in is not available yet. Please check again later.`);
+    Alert.alert(`We're Sorry!`, `'Signing in is not available yet. Please check again later.`);
   };
 
   handleTogglePassword = () => {
@@ -88,13 +91,7 @@ class EmailSignInScreen extends Component {
             returnKeyType="next"
             secureTextEntry={this.state.hidePassword}
           />
-          <View
-            style={{
-              flex: 2,
-              flexDirection: 'row',
-              justifyContent: 'space-between'
-            }}
-          >
+          <View style={styles.passwordButtonsContainer}>
             <View>
               <TouchableOpacity onPress={this.handleForgotPassword}>
                 <Text style={globalStyles.smallTextButton}>Forgot password?</Text>
@@ -124,7 +121,9 @@ const styles = EStyleSheet.create({
     flex: 1
   },
   containerTop: {
-    flex: 1,
+    //flex: 1,
+    height: 275,
+    width: '100%',
     backgroundColor: colors.lightBlue
   },
   imageContainer: {
@@ -135,11 +134,14 @@ const styles = EStyleSheet.create({
   containerBottom: {
     flex: 1,
     backgroundColor: colors.white,
-    padding: 20
+    paddingBottom: 20,
+    paddingTop: 15,
+    paddingHorizontal: 20
   },
   passwordButtonsContainer: {
-    backgroundColor: 'yellow',
-    height: 50
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 });
 
