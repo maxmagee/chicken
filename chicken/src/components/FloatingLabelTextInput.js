@@ -136,7 +136,8 @@ const styles = EStyleSheet.create({
     right: 0,
     color: globalStyles.textInput.label.color,
     fontFamily: 'Arial',
-    fontSize: 11
+    fontSize: 11,
+    fontWeight: 'bold'
   }
 });
 
