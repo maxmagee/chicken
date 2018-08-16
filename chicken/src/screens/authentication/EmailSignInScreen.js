@@ -58,10 +58,7 @@ class EmailSignInScreen extends Component {
   };
 
   handleNewAccount = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Creating a new account is not supported yet. Please check again later.`
-    );
+    this.props.navigation.navigate('EmailSignUp');
   };
 
   handlePasswordChangeText = newValue => {
