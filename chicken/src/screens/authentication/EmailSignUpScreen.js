@@ -13,7 +13,7 @@ import TermsAgreementWaiver from '../../components/authentication/TermsAgreement
 class EmailSignUpScreen extends Component {
   // TODO: length indicator number for first / last name
   // TODO: Password strength indicator
-  // TODO: Shake animation / red text change on validation failure
+  // TODO: Shake animation / red text change on validation failure https://stackoverflow.com/questions/47921658/react-native-how-to-animate-a-particular-component
   constructor(props) {
     super(props);
 
@@ -43,19 +43,22 @@ class EmailSignUpScreen extends Component {
 
   handleEmailChangeText = newValue => {
     this.setState({
-      emailAddress: newValue
+      emailAddress: newValue,
+      emailIsValid: null
     });
   };
 
   handlePasswordChangeText = newValue => {
     this.setState({
-      password: newValue
+      password: newValue,
+      passwordIsValid: null
     });
   };
 
   handleConfirmPasswordChangeText = newValue => {
     this.setState({
-      confirmPassword: newValue
+      confirmPassword: newValue,
+      confirmPasswordIsValid: null
     });
   };
 
@@ -171,6 +174,7 @@ class EmailSignUpScreen extends Component {
             autoCorrect={false}
             clearButtonMode="while-editing"
             keyboardType="email-address"
+            isValid={this.state.emailIsValid}
             returnKeyType="next"
           />
           <FloatingLabelTextInput
@@ -180,6 +184,7 @@ class EmailSignUpScreen extends Component {
             autoCapitalize="none"
             autoCorrect={false}
             clearButtonMode="while-editing"
+            isValid={this.state.passwordIsValid}
             returnKeyType="next"
             secureTextEntry
           />
@@ -190,6 +195,7 @@ class EmailSignUpScreen extends Component {
             autoCapitalize="none"
             autoCorrect={false}
             clearButtonMode="while-editing"
+            isValid={this.state.confirmPasswordIsValid}
             returnKeyType="next"
             secureTextEntry
           />

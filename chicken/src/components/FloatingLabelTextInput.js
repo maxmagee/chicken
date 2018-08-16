@@ -3,7 +3,7 @@ import { View, TextInput, Animated } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { globalStyles } from '../config/globalStyles';
+import { globalStyles, colors } from '../config/globalStyles';
 
 class FloatingLabelTextInput extends Component {
   constructor(props) {
@@ -43,10 +43,16 @@ class FloatingLabelTextInput extends Component {
           globalStyles.textInput.label.fontSize
         ]
       }),
-      color: this.animatedIsFocused.interpolate({
-        inputRange: [0, 1],
-        outputRange: [globalStyles.textInput.placeHolder.color, globalStyles.textInput.label.color]
-      }),
+      color:
+        props.isValid === false
+          ? colors.red
+          : this.animatedIsFocused.interpolate({
+              inputRange: [0, 1],
+              outputRange: [
+                globalStyles.textInput.placeHolder.color,
+                globalStyles.textInput.label.color
+              ]
+            }),
       fontWeight: globalStyles.textInput.label.fontWeight
     };
 
@@ -76,6 +82,7 @@ class FloatingLabelTextInput extends Component {
 }
 
 FloatingLabelTextInput.propTypes = {
+  isValid: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string
