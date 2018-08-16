@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   View
 } from 'react-native';
+import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import constants from '../../config/constants';
@@ -176,6 +177,10 @@ class EmailSignInScreen extends Component {
     );
   }
 }
+
+EmailSignInScreen.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 const styles = EStyleSheet.create({
   container: {
