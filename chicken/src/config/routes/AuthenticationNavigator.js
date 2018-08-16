@@ -1,37 +1,43 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import { Ionicons } from '@expo/vector-icons';
-import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { colors, globalStyles } from '../../config/globalStyles';
 
-import AuthModeScreen from '../../screens/authentication/AuthModeScreen';
+import HeaderLeftButton from '../../components/modalNavigator/HeaderLeftButton';
 
-const renderHeaderLeft = navigation => {
-  // I had to wrap the icon like this to move it away from the edge
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        navigation.dismiss();
-      }}
-    >
-      <View style={styles.iconContainer}>
-        <View style={styles.iconWrapper}>
-          <Ionicons name="md-close" size={30} color={colors.darkBlue} />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
+import AuthModeScreen from '../../screens/authentication/AuthModeScreen';
+import EmailSignInScreen from '../../screens/authentication/EmailSignInScreen';
+import EmailSignUpScreen from '../../screens/authentication/EmailSignUpScreen';
 
 const AuthenticationNavigator = createStackNavigator(
   {
     AuthMode: {
       screen: AuthModeScreen,
       navigationOptions: ({ navigation }) => ({
-        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue),
-        headerLeft: renderHeaderLeft(navigation)
+        headerLeft: (
+          <HeaderLeftButton type="close" color={colors.darkBlue} navigation={navigation} />
+        ),
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue)
+      })
+    },
+    EmailSignIn: {
+      screen: EmailSignInScreen,
+      navigationOptions: ({ navigation }) => ({
+        headerLeft: (
+          <HeaderLeftButton type="back" color={colors.darkBlue} navigation={navigation} />
+        ),
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue)
+      })
+    },
+    EmailSignUp: {
+      screen: EmailSignUpScreen,
+      navigationOptions: ({ navigation }) => ({
+        headerLeft: (
+          <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+        ),
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.navigationHeaderBackground),
+        headerTitleStyle: globalStyles.navigationHeaderTitle,
+        title: 'Join Chick-fil-A One'
       })
     }
   },
@@ -39,17 +45,5 @@ const AuthenticationNavigator = createStackNavigator(
     headerMode: 'screen'
   }
 );
-
-const styles = EStyleSheet.create({
-  iconContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    width: 100
-  },
-  iconWrapper: {
-    paddingLeft: 15,
-    marginTop: 0
-  }
-});
 
 export default AuthenticationNavigator;

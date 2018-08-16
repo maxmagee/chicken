@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Alert, Image, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { colors, globalStyles } from '../../config/globalStyles';
+import { colors } from '../../config/globalStyles';
 import iconEmail from '../../../assets/icons/icon-email.png';
 import iconFacebook from '../../../assets/icons/icon-facebook.png';
 import iconGoogle from '../../../assets/icons/icon-google.png';
 import sun from '../../../assets/images/sun.png';
 
-import AuthModeListItem from '../../components/AuthModeListItem';
+import AuthModeListItem from '../../components/authentication/AuthModeListItem';
 import EllipsisCallout from '../../components/EllipsisCallout';
+import TermsAgreementWaiver from '../../components/authentication/TermsAgreementWaiver';
 
 class AuthModeScreen extends Component {
   handleFacebookPress = () => {
@@ -27,22 +28,14 @@ class AuthModeScreen extends Component {
   };
 
   handleEmailPress = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Email authentication is not available yet. Please check again later.`
-    );
-  };
-
-  handleTermsPress = () => {
-    StatusBar.setBarStyle('light-content');
-    this.props.navigation.navigate('TermsAndConditionsNavigator');
+    this.props.navigation.navigate('EmailSignIn');
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ flex: 1 }}>
-          <View style={[styles.containerTop, { alignItems: 'center', justifyContent: 'center' }]}>
+        <View style={styles.containerTop}>
+          <View style={styles.imageContainer}>
             <Image source={sun} height={160} width={160} />
           </View>
           <EllipsisCallout
@@ -51,7 +44,6 @@ class AuthModeScreen extends Component {
             emphasizedText="SIGN IN TO CHICK-FIL-A ONE"
           />
         </View>
-
         <View style={styles.containerBottom}>
           <AuthModeListItem
             iconImage={iconFacebook}
@@ -68,24 +60,7 @@ class AuthModeScreen extends Component {
             labelText="Email"
             onPress={this.handleEmailPress}
           />
-          <View style={styles.containerBottomTerms}>
-            <View style={styles.termsTextContainer}>
-              <Text style={[globalStyles.regularSmallText, styles.termsText]}>
-                By signing in, you agree to Chick-fil-A’s{' '}
-                <TouchableOpacity onPress={this.handleTermsPress}>
-                  <Text
-                    style={[
-                      globalStyles.regularSmallText,
-                      globalStyles.termsText,
-                      { color: colors.darkBlue }
-                    ]}
-                  >
-                    Terms of Service and Privacy Notice.
-                  </Text>
-                </TouchableOpacity>
-              </Text>
-            </View>
-          </View>
+          <TermsAgreementWaiver navigation={this.props.navigation} />
         </View>
       </View>
     );
@@ -98,25 +73,16 @@ const styles = EStyleSheet.create({
   },
   containerTop: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: colors.lightBlue
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   containerBottom: {
     flex: 1,
     backgroundColor: colors.white
-  },
-  containerBottomTerms: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: 14
-  },
-  termsTextContainer: {
-    width: 195
-  },
-  termsText: {
-    textAlign: 'center'
   }
 });
 

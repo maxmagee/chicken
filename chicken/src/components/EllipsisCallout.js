@@ -6,7 +6,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { colors, globalStyles } from '../config/globalStyles';
 
 const EllipsisCallout = props => (
-  <View style={[styles.container, { backgroundColor: props.backgroundColor }]}>
+  <View style={[styles.container, props.containerStyle]}>
     <View style={styles.largeTextContainer}>
       <Text style={[globalStyles.callout, styles.largeText]}>{props.largeText}</Text>
     </View>
@@ -22,7 +22,7 @@ const EllipsisCallout = props => (
 );
 
 EllipsisCallout.propTypes = {
-  backgroundColor: PropTypes.string,
+  containerStyle: PropTypes.number,
   largeText: PropTypes.string.isRequired,
   emphasizedText: PropTypes.string.isRequired
 };

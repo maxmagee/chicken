@@ -4,7 +4,7 @@ import { Image, Text, TouchableHighlight, View } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { colors } from '../config/globalStyles';
+import { colors } from '../../config/globalStyles';
 
 const AuthModeListItem = props => (
   <TouchableHighlight style={{ flex: 1 }} onPress={props.onPress} underlayColor={colors.gray}>
