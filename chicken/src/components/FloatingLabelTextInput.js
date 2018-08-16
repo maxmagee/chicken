@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Animated } from 'react-native';
+import { View, Text, TextInput, Animated } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -83,6 +83,14 @@ class FloatingLabelTextInput extends Component {
           value={this.props.value}
           onChangeText={this.props.onChangeText}
         />
+        <Text
+          style={[
+            styles.bottomLabel,
+            { color: props.borderBottomColor || globalStyles.textInput.container.borderBottomColor }
+          ]}
+        >
+          {props.bottomLabel}
+        </Text>
       </View>
     );
   }
@@ -100,6 +108,14 @@ const styles = EStyleSheet.create({
   container: {
     paddingTop: 18,
     marginBottom: 10
+  },
+  bottomLabel: {
+    fontFamily: 'Arial',
+    fontSize: 11,
+    fontWeight: 'bold',
+    position: 'absolute',
+    left: 0,
+    top: 45
   }
 });
 

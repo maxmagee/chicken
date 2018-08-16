@@ -12,8 +12,6 @@ import TermsAgreementWaiver from '../../components/authentication/TermsAgreement
 
 class EmailSignUpScreen extends Component {
   // TODO: length indicator number for first / last name
-  // TODO: Password strength indicator
-  // TODO: Shake animation / red text change on validation failure https://stackoverflow.com/questions/47921658/react-native-how-to-animate-a-particular-component
   constructor(props) {
     super(props);
 
@@ -26,7 +24,8 @@ class EmailSignUpScreen extends Component {
       emailIsValid: null,
       passwordIsValid: null,
       confirmPasswordIsValid: null,
-      passwordBorderColor: globalStyles.textInput.container.borderBottomColor || colors.gray
+      passwordBorderColor: globalStyles.textInput.container.borderBottomColor || colors.gray,
+      passwordBottomLabel: ''
     };
   }
 
@@ -52,28 +51,30 @@ class EmailSignUpScreen extends Component {
   handlePasswordChangeText = newValue => {
     const passwordLength = newValue.length;
     let borderColor = globalStyles.textInput.container.borderBottomColor;
+    let passwordBottomLabel = '';
 
     if (passwordLength > 0 && passwordLength < 6) {
-      // very weak
-      borderColor = colors.maroon || 'maroon';
+      borderColor = colors.maroon;
+      passwordBottomLabel = 'very weak';
     } else if (passwordLength >= 6 && passwordLength < 8) {
-      // weak
       borderColor = colors.red;
+      passwordBottomLabel = 'weak';
     } else if (passwordLength >= 8 && passwordLength < 13) {
-      // reasonable
-      borderColor = colors.orange || 'orange';
+      borderColor = colors.orange;
+      passwordBottomLabel = 'reasonable';
     } else if (passwordLength >= 13 && passwordLength < 20) {
-      // strong
-      borderColor = colors.yellow || 'yellow';
+      borderColor = colors.yellow;
+      passwordBottomLabel = 'strong';
     } else if (passwordLength >= 20) {
-      // very strong
-      borderColor = colors.green || 'green';
+      borderColor = colors.green;
+      passwordBottomLabel = 'very strong';
     }
 
     this.setState({
       password: newValue,
       passwordIsValid: null,
-      passwordBorderColor: borderColor
+      passwordBorderColor: borderColor,
+      passwordBottomLabel
     });
   };
 
@@ -92,34 +93,16 @@ class EmailSignUpScreen extends Component {
     }
   };
 
-  indicateInvalidFields = () => {
-    console.log('inside indicateInvalidFields');
-    if (
-      this.state.emailIsValid &&
-      this.state.passwordIsValid &&
-      this.state.confirmPasswordIsValid
-    ) {
-      console.log('all fields are valid');
-    } else {
-      console.log('shaking invalid fields and making them red...');
-    }
-  };
-
   formIsValid = () => {
     const emailResult = this.emailIsValid();
     const passwordResult = this.passwordIsValid();
     const confirmPasswordResult = this.confirmPasswordIsValid();
 
-    this.setState(
-      {
-        emailIsValid: emailResult,
-        passwordIsValid: passwordResult,
-        confirmPasswordIsValid: confirmPasswordResult
-      },
-      () => {
-        this.indicateInvalidFields();
-      }
-    );
+    this.setState({
+      emailIsValid: emailResult,
+      passwordIsValid: passwordResult,
+      confirmPasswordIsValid: confirmPasswordResult
+    });
 
     return emailResult && passwordResult && confirmPasswordResult;
   };
@@ -206,11 +189,13 @@ class EmailSignUpScreen extends Component {
             autoCapitalize="none"
             autoCorrect={false}
             borderBottomColor={this.state.passwordBorderColor}
+            bottomLabel={this.state.passwordBottomLabel}
             clearButtonMode="while-editing"
             isValid={this.state.passwordIsValid}
             returnKeyType="next"
             secureTextEntry
           />
+          <View style={{ width: '100%', height: 5 }} />
           <FloatingLabelTextInput
             label="CONFIRM PASSWORD"
             value={this.state.confirmPassword}
