@@ -86,10 +86,13 @@ class FloatingLabelTextInput extends Component {
         <Text
           style={[
             styles.bottomLabel,
-            { color: props.borderBottomColor || globalStyles.textInput.container.borderBottomColor }
+            {
+              color:
+                this.props.borderBottomColor || globalStyles.textInput.container.borderBottomColor
+            }
           ]}
         >
-          {props.bottomLabel}
+          {this.props.bottomLabel}
         </Text>
       </View>
     );
