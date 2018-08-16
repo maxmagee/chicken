@@ -25,7 +25,8 @@ class EmailSignUpScreen extends Component {
       confirmPassword: '',
       emailIsValid: null,
       passwordIsValid: null,
-      confirmPasswordIsValid: null
+      confirmPasswordIsValid: null,
+      passwordBorderColor: globalStyles.textInput.container.borderBottomColor || colors.gray
     };
   }
 
@@ -49,9 +50,30 @@ class EmailSignUpScreen extends Component {
   };
 
   handlePasswordChangeText = newValue => {
+    const passwordLength = newValue.length;
+    let borderColor = globalStyles.textInput.container.borderBottomColor;
+
+    if (passwordLength > 0 && passwordLength < 6) {
+      // very weak
+      borderColor = colors.maroon || 'maroon';
+    } else if (passwordLength >= 6 && passwordLength < 8) {
+      // weak
+      borderColor = colors.red;
+    } else if (passwordLength >= 8 && passwordLength < 13) {
+      // reasonable
+      borderColor = colors.orange || 'orange';
+    } else if (passwordLength >= 13 && passwordLength < 20) {
+      // strong
+      borderColor = colors.yellow || 'yellow';
+    } else if (passwordLength >= 20) {
+      // very strong
+      borderColor = colors.green || 'green';
+    }
+
     this.setState({
       password: newValue,
-      passwordIsValid: null
+      passwordIsValid: null,
+      passwordBorderColor: borderColor
     });
   };
 
@@ -183,6 +205,7 @@ class EmailSignUpScreen extends Component {
             onChangeText={this.handlePasswordChangeText}
             autoCapitalize="none"
             autoCorrect={false}
+            borderBottomColor={this.state.passwordBorderColor}
             clearButtonMode="while-editing"
             isValid={this.state.passwordIsValid}
             returnKeyType="next"

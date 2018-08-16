@@ -61,7 +61,14 @@ class FloatingLabelTextInput extends Component {
         <Animated.Text style={labelStyle}>{label}</Animated.Text>
         <TextInput
           {...props}
-          style={[globalStyles.textInput.container, globalStyles.textInput.text]}
+          style={[
+            globalStyles.textInput.container,
+            globalStyles.textInput.text,
+            {
+              borderBottomColor:
+                props.borderBottomColor || globalStyles.textInput.container.borderBottomColor
+            }
+          ]}
           onFocus={() => {
             // We don't want to override a provided onFocus handler
             // But we do need to provide our own to animate the label
@@ -82,6 +89,7 @@ class FloatingLabelTextInput extends Component {
 }
 
 FloatingLabelTextInput.propTypes = {
+  borderBottomColor: PropTypes.string,
   isValid: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,

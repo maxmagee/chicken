@@ -9,16 +9,20 @@ const colors = {
     }
   },
   gray: '#DBE0E2',
+  green: '#249E6C',
   inputLabelGray: '#A8ADB1',
   lightBlue: '#DCF1F6',
+  maroon: '#AF272F',
   modalNavigationHeaderBackground: '#3BB1C7',
   modalNavigationHeaderTabActive: '#FFFFFF',
   modalNavigationHeaderTabUnderline: '#FFFFFF',
   modalNavigationHeaderTabInactive: '#E2F4F8',
   navigationHeaderBackground: '#F7F7F7',
+  orange: '#FA936F',
   red: '#DE0031',
   teal: '#3BB1C7',
-  white: '#FFFFFF'
+  white: '#FFFFFF',
+  yellow: '#FFB549'
 };
 
 export default colors;
