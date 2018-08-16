@@ -11,6 +11,9 @@ import MainActionButton from '../../components/buttons/MainActionButton';
 import TermsAgreementWaiver from '../../components/authentication/TermsAgreementWaiver';
 
 class EmailSignUpScreen extends Component {
+  // TODO: length indicator number for first / last name
+  // TODO: Password strength indicator
+  // TODO: Shake animation / red text change on validation failure
   constructor(props) {
     super(props);
 
@@ -19,7 +22,10 @@ class EmailSignUpScreen extends Component {
       lastName: '',
       emailAddress: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      emailIsValid: null,
+      passwordIsValid: null,
+      confirmPasswordIsValid: null
     };
   }
 
@@ -54,9 +60,60 @@ class EmailSignUpScreen extends Component {
   };
 
   handleSignUp = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Creating an account is not supported yet. Please check again later.`
+    if (this.formIsValid()) {
+      Alert.alert(`Success!`, `Would be attempting registration right now if it was supported.`);
+    } else {
+      Alert.alert(`Uh Oh!`, `There are problems with the values provided.`);
+    }
+  };
+
+  indicateInvalidFields = () => {
+    console.log('inside indicateInvalidFields');
+    if (
+      this.state.emailIsValid &&
+      this.state.passwordIsValid &&
+      this.state.confirmPasswordIsValid
+    ) {
+      console.log('all fields are valid');
+    } else {
+      console.log('shaking invalid fields and making them red...');
+    }
+  };
+
+  formIsValid = () => {
+    const emailResult = this.emailIsValid();
+    const passwordResult = this.passwordIsValid();
+    const confirmPasswordResult = this.confirmPasswordIsValid();
+
+    this.setState(
+      {
+        emailIsValid: emailResult,
+        passwordIsValid: passwordResult,
+        confirmPasswordIsValid: confirmPasswordResult
+      },
+      () => {
+        this.indicateInvalidFields();
+      }
+    );
+
+    return emailResult && passwordResult && confirmPasswordResult;
+  };
+
+  confirmPasswordIsValid = () => {
+    return this.state.password === this.state.confirmPassword;
+  };
+
+  emailIsValid = () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(this.state.emailAddress);
+  };
+
+  passwordIsValid = () => {
+    // Must be 8 characters long, contain a least one number, contain at least one letter
+    return (
+      this.state.password.length >= 8 &&
+      /\d/.test(this.state.password) &&
+      /[a-z]/i.test(this.state.password)
     );
   };
 
