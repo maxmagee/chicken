@@ -11,7 +11,6 @@ import MainActionButton from '../../components/buttons/MainActionButton';
 import TermsAgreementWaiver from '../../components/authentication/TermsAgreementWaiver';
 
 class EmailSignUpScreen extends Component {
-  // TODO: length indicator number for first / last name
   constructor(props) {
     super(props);
 
@@ -159,6 +158,7 @@ class EmailSignUpScreen extends Component {
             autoCorrect={false}
             clearButtonMode="while-editing"
             keyboardType="default"
+            maxLength={30}
             returnKeyType="next"
           />
           <FloatingLabelTextInput
@@ -169,6 +169,7 @@ class EmailSignUpScreen extends Component {
             autoCorrect={false}
             clearButtonMode="while-editing"
             keyboardType="default"
+            maxLength={30}
             returnKeyType="next"
           />
           <FloatingLabelTextInput

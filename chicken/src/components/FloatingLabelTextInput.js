@@ -27,6 +27,14 @@ class FloatingLabelTextInput extends Component {
 
   handleFocus = () => this.setState({ isFocused: true });
 
+  renderTopRightLabelText = () => {
+    if (this.props.value.length === 0 || this.props.maxLength === undefined) {
+      return null;
+    }
+
+    return this.props.maxLength - this.props.value.length;
+  };
+
   render() {
     const { label, ...props } = this.props;
     const labelStyle = {
@@ -59,6 +67,7 @@ class FloatingLabelTextInput extends Component {
     return (
       <View style={styles.container}>
         <Animated.Text style={labelStyle}>{label}</Animated.Text>
+        <Text style={styles.topRightLabel}>{this.renderTopRightLabelText()}</Text>
         <TextInput
           {...props}
           style={[
@@ -103,6 +112,7 @@ FloatingLabelTextInput.propTypes = {
   borderBottomColor: PropTypes.string,
   isValid: PropTypes.bool,
   label: PropTypes.string.isRequired,
+  maxLength: PropTypes.number,
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string
 };
@@ -119,6 +129,14 @@ const styles = EStyleSheet.create({
     position: 'absolute',
     left: 0,
     top: 45
+  },
+  topRightLabel: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    color: globalStyles.textInput.label.color,
+    fontFamily: 'Arial',
+    fontSize: 11
   }
 });
 
