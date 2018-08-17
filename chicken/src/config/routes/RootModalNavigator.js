@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import AuthenticatedMainTabNavigator from './authenticated/AuthenticatedMainTabNavigator';
 import AuthenticationNavigator from './AuthenticationNavigator';
 import MainTabNavigator from './MainTabNavigator';
-import TermsAndConditionsNavigator from './TermsAndConditionsNavigator';
+import TermsAndConditionsModalNavigator from './TermsAndConditionsModalNavigator';
 
 const RootModalNavigator = createStackNavigator(
   {
@@ -14,8 +14,8 @@ const RootModalNavigator = createStackNavigator(
         gesturesEnabled: false
       })
     },
-    TermsAndConditionsNavigator: {
-      screen: TermsAndConditionsNavigator,
+    TermsAndConditionsModalNavigator: {
+      screen: TermsAndConditionsModalNavigator,
       navigationOptions: () => ({
         // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
       })

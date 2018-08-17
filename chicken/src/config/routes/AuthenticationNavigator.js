@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 
 import { colors, globalStyles } from '../../config/globalStyles';
 
-import HeaderLeftButton from '../../components/modalNavigator/HeaderLeftButton';
+import HeaderLeftButton from '../../components/navigationHeader/HeaderLeftButton';
 
 import AuthModeScreen from '../../screens/authentication/AuthModeScreen';
 import EmailSignInScreen from '../../screens/authentication/EmailSignInScreen';

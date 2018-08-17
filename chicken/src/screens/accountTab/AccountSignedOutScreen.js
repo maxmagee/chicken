@@ -11,7 +11,7 @@ import GeneralizedSignedOutScreen from '../shared/GeneralizedSignedOutScreen';
 class AccountSignedOutScreen extends Component {
   handleTermsPress = () => {
     StatusBar.setBarStyle('light-content');
-    this.props.navigation.navigate('TermsAndConditionsNavigator');
+    this.props.navigation.navigate('TermsAndConditionsModalNavigator', { isModal: true });
   };
 
   render() {
