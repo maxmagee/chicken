@@ -1,12 +1,19 @@
 import { createStackNavigator } from 'react-navigation';
 
+import AuthenticatedMainTabNavigator from './authenticated/AuthenticatedMainTabNavigator';
 import AuthenticationNavigator from './AuthenticationNavigator';
 import MainTabNavigator from './MainTabNavigator';
 import TermsAndConditionsNavigator from './TermsAndConditionsNavigator';
 
-const RootNavigator = createStackNavigator(
+const RootModalNavigator = createStackNavigator(
   {
     MainTabNavigator: { screen: MainTabNavigator },
+    AuthenticatedMainTabNavigator: {
+      screen: AuthenticatedMainTabNavigator,
+      navigationOptions: () => ({
+        gesturesEnabled: false
+      })
+    },
     TermsAndConditionsNavigator: {
       screen: TermsAndConditionsNavigator,
       navigationOptions: () => ({
@@ -22,8 +29,9 @@ const RootNavigator = createStackNavigator(
   },
   {
     headerMode: 'none',
-    mode: 'modal'
+    mode: 'modal',
+    initialRouteName: 'MainTabNavigator'
   }
 );
 
-export default RootNavigator;
+export default RootModalNavigator;

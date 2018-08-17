@@ -77,7 +77,9 @@ class EmailSignInScreen extends Component {
           firstName: payload.name,
           lastName: payload.family_name
         };
-        Alert.alert(`Success`, `Welcome, ${user.firstName} ${user.lastName}!`);
+        console.log('navigating to authenticated tabs');
+        this.props.navigation.navigate('AuthenticatedMainTabNavigator');
+        //Alert.alert(`Success`, `Welcome, ${user.firstName} ${user.lastName}!`);
       })
       .catch(err => {
         Alert.alert(`Error`, `${err.message}`);
