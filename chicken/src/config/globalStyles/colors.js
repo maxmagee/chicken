@@ -9,6 +9,7 @@ const colors = {
     }
   },
   gray: '#DBE0E2',
+  grayChevron: '#A8ADB1',
   green: '#249E6C',
   inputLabelGray: '#A8ADB1',
   lightBlue: '#DCF1F6',
