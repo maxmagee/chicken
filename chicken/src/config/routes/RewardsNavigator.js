@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { colors, globalStyles } from '../../config/globalStyles';
+import { globalStyles } from '../globalStyles';
 
 import RewardsSignedOutScreen from '../../screens/rewardsTab/RewardsSignedOutScreen';
 
@@ -10,9 +10,7 @@ const RewardsNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: 'Rewards',
       headerTitleStyle: globalStyles.navigationHeaderTitle,
-      headerStyle: {
-        backgroundColor: colors.navigationHeaderBackground
-      }
+      headerStyle: globalStyles.navigationHeaderStyle
     })
   }
 });
