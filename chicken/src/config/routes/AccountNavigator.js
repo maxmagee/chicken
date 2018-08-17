@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { colors, globalStyles } from '../../config/globalStyles';
+import { globalStyles } from '../globalStyles';
 
 import AccountSignedOutScreen from '../../screens/accountTab/AccountSignedOutScreen';
 
@@ -10,9 +10,7 @@ const AccountNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: 'Account',
       headerTitleStyle: globalStyles.navigationHeaderTitle,
-      headerStyle: {
-        backgroundColor: colors.navigationHeaderBackground
-      }
+      headerStyle: globalStyles.navigationHeaderStyle
     })
   }
 });

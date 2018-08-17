@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { colors, globalStyles } from '../../globalStyles';
+import { globalStyles } from '../../globalStyles';
 
 import MyOrderScreen from '../../../screens/authenticated/myOrderTab/MyOrderScreen';
 
@@ -10,9 +10,7 @@ const AuthenticatedMyOrderNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: 'My Order',
       headerTitleStyle: globalStyles.navigationHeaderTitle,
-      headerStyle: {
-        backgroundColor: colors.navigationHeaderBackground
-      }
+      headerStyle: globalStyles.navigationHeaderStyle
     })
   }
 });

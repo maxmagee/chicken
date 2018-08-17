@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { colors, globalStyles } from '../../config/globalStyles';
+import { globalStyles } from '../globalStyles';
 
 import ScanSignedOutScreen from '../../screens/scanTab/ScanSignedOutScreen';
 
@@ -10,9 +10,7 @@ const ScanNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: 'Scan',
       headerTitleStyle: globalStyles.navigationHeaderTitle,
-      headerStyle: {
-        backgroundColor: colors.navigationHeaderBackground
-      }
+      headerStyle: globalStyles.navigationHeaderStyle
     })
   }
 });
