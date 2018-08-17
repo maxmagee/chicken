@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { colors, globalStyles } from '../../../config/globalStyles';
+import { colors, globalStyles } from '../../globalStyles';
 
 import MyOrderScreen from '../../../screens/authenticated/myOrderTab/MyOrderScreen';
 
