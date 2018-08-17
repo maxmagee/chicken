@@ -62,7 +62,7 @@ The Sketch files are available in the 'designs' directory.
 - [React Native](https://facebook.github.io/react-native/) - A platform to build native apps using JavaScript and React.
 - [Expo](https://expo.io/features) - A toolchain and publishing platform for React Native.
 - [React Navigation](https://reactnavigation.org) - Provides routing and navigation for React Native apps.
-- [React Native Elements](https://react-native-training.github.io/react-native-elements/) - A cross-platform React Native UI toolkit.
+- [AWS Cognito](https://aws.amazon.com/cognito/) - Provides user sign-in and sign-up capabilities.
 - [Sketch](https://www.sketchapp.com) - A MacOS design application.
 
 ## Authors
