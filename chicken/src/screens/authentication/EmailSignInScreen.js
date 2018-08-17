@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Auth } from 'aws-amplify';
 
 import constants from '../../config/constants';
 import { colors, globalStyles } from '../../config/globalStyles';
@@ -69,7 +70,19 @@ class EmailSignInScreen extends Component {
   };
 
   handleSignIn = () => {
-    Alert.alert(`We're Sorry!`, `Signing in is not available yet. Please check again later.`);
+    Auth.signIn(this.state.emailAddress, this.state.password)
+      .then(response => {
+        const { payload } = response.signInUserSession.idToken;
+        const user = {
+          firstName: payload.name,
+          lastName: payload.family_name
+        };
+        Alert.alert(`Success`, `Welcome, ${user.firstName} ${user.lastName}!`);
+      })
+      .catch(err => {
+        Alert.alert(`Error`, `${err.message}`);
+        console.log('Sign In Error: ', err);
+      });
   };
 
   handleTogglePassword = () => {
