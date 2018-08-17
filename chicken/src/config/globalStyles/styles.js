@@ -69,6 +69,10 @@ const globalStyles = {
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  navigationHeaderStyle: {
+    backgroundColor: colors.navigationHeaderBackground,
+    borderBottomColor: colors.navigationHeaderBackground
+  },
   navigationHeaderTitle: {
     color: colors.darkGray,
     fontFamily: 'Arial',
