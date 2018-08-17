@@ -14,6 +14,9 @@ import AccountHeader from '../../../components/AccountHeader';
 class AccountSignedInScreen extends Component {
   handleNavigateTo = routeName => {
     switch (routeName) {
+      case 'TermsAndConditions':
+        this.props.navigation.navigate(routeName, { isModal: false });
+        break;
       default:
         Alert.alert(`We're Sorry!`, `This feature is not available yet. Please check again later.`);
         break;

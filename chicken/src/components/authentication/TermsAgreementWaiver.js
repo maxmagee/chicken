@@ -8,7 +8,7 @@ import { colors, globalStyles } from '../../config/globalStyles';
 const TermsAgreementWaiver = props => {
   const handleTermsPress = () => {
     StatusBar.setBarStyle('light-content');
-    props.navigation.navigate('TermsAndConditionsNavigator');
+    props.navigation.navigate('TermsAndConditionsModalNavigator', { isModal: true });
   };
 
   return (

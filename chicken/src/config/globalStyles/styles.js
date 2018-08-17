@@ -73,6 +73,14 @@ const globalStyles = {
     backgroundColor: colors.navigationHeaderBackground,
     borderBottomColor: colors.navigationHeaderBackground
   },
+  navigationHeaderTabBar: {
+    backgroundColor: colors.navigationHeaderBackground,
+    marginTop: 0,
+    paddingTop: 13,
+    borderBottomColor: colors.navigationHeaderBackground,
+    borderStyle: 'solid',
+    height: 39
+  },
   navigationHeaderTitle: {
     color: colors.darkGray,
     fontFamily: 'Arial',
