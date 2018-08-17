@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import constants from '../../config/constants';
 
-import GradientButton from '../../components/GradientButton';
+import GradientButton from './GradientButton';
 import ShadowButton from './ShadowButton';
 
 const MainActionButton = props => {
