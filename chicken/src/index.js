@@ -2,7 +2,7 @@ import Amplify from 'aws-amplify';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import awsExports from './aws-exports';
-import RootNavigator from './config/routes/RootNavigator';
+import RootModalNavigator from './config/routes/RootModalNavigator';
 
 Amplify.configure(awsExports);
 
@@ -11,4 +11,4 @@ EStyleSheet.build({
   // $outline: 1
 });
 
-export default RootNavigator;
+export default RootModalNavigator;

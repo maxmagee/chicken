@@ -3,12 +3,12 @@ import { Alert, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import constants from '../../config/constants';
-import { colors } from '../../config/globalStyles';
+import constants from '../../../config/constants';
+import { colors } from '../../../config/globalStyles';
 
-import MainActionButton from '../../components/buttons/MainActionButton';
-import SimpleNavListItem from '../../components/listItems/SimpleNavListItem';
-import AccountHeader from '../../components/AccountHeader';
+import MainActionButton from '../../../components/buttons/MainActionButton';
+import SimpleNavListItem from '../../../components/listItems/SimpleNavListItem';
+import AccountHeader from '../../../components/AccountHeader';
 
 // TODO: render the information for the actual person that's signed in for the AccountHeader
 class AccountSignedInScreen extends Component {
@@ -24,7 +24,8 @@ class AccountSignedInScreen extends Component {
 
   handleSignOut = () => {
     // TODO: implement sign out method
-    Alert.alert(`We're Sorry!`, `Signing out is not available yet. Please check again later.`);
+    this.props.navigation.navigate('MainTabNavigator');
+    //Alert.alert(`We're Sorry!`, `Signing out is not available yet. Please check again later.`);
   };
 
   render() {
