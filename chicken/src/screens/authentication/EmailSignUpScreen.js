@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Alert, Keyboard, Text, TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Auth } from 'aws-amplify';
 
 import constants from '../../config/constants';
 import { colors, globalStyles } from '../../config/globalStyles';
@@ -86,7 +87,22 @@ class EmailSignUpScreen extends Component {
 
   handleSignUp = () => {
     if (this.formIsValid()) {
-      Alert.alert(`Success!`, `Would be attempting registration right now if it was supported.`);
+      Auth.signUp({
+        username: this.state.emailAddress,
+        password: this.state.password,
+        attributes: {
+          name: this.state.firstName,
+          email: this.state.emailAddress,
+          family_name: this.state.lastName
+        }
+      })
+        .then(() => {
+          Alert.alert(`Success!`, `You have registered your account.`);
+        })
+        .catch(err => {
+          Alert.alert(`Error!`, `${err.message}`);
+          console.log('Email Sign Up Error: ', err);
+        });
     } else {
       Alert.alert(`Uh Oh!`, `There are problems with the values provided.`);
     }
