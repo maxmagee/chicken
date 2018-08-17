@@ -1,0 +1,6 @@
+{
+  "SourceDir": "/src",
+  "DistributionDir": "/build",
+  "BuildCommand": "exp build:ios",
+  "StartCommand": "npm ios"
+}
