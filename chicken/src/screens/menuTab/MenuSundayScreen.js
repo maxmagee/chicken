@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Alert, SafeAreaView, ImageBackground, StatusBar, Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import constants from '../../config/constants';
 import { globalStyles } from '../../config/globalStyles';
 import buildingAtNight from '../../../assets/backgrounds/buildingAtNight.png';
 
-import GradientButton from '../../components/GradientButton';
+import MainActionButton from '../../components/buttons/MainActionButton';
 
 class MenuSundayScreen extends Component {
   handleViewMenuPress = () => {
@@ -31,7 +32,11 @@ class MenuSundayScreen extends Component {
               </View>
               <View style={styles.bottomContainer}>
                 <View style={styles.buttonContainer}>
-                  <GradientButton label="View the menu" onPress={this.handleViewMenuPress} />
+                  <MainActionButton
+                    type={constants.actionButtonTypes.BUTTON_TYPE_RED}
+                    label="View the menu"
+                    onPress={this.handleViewMenuPress}
+                  />
                 </View>
               </View>
             </SafeAreaView>

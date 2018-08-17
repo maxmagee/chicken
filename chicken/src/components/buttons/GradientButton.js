@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { colors, globalStyles } from '../config/globalStyles';
+import { colors, globalStyles } from '../../config/globalStyles';
 
 const GradientButton = ({ label, onPress }) => (
   <TouchableHighlight onPress={onPress} underlayColor="transparent">

@@ -3,8 +3,10 @@ import { ImageBackground, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import GradientButton from '../../components/GradientButton';
+import constants from '../../config/constants';
 import { colors, globalStyles } from '../../config/globalStyles';
+
+import MainActionButton from '../../components/buttons/MainActionButton';
 
 class GeneralizedSignedOutScreen extends Component {
   handleButtonPress = () => {
@@ -20,7 +22,11 @@ class GeneralizedSignedOutScreen extends Component {
           </View>
           <View style={this.props.childStyles}>{this.props.children}</View>
           <View style={styles.buttonContainer}>
-            <GradientButton label="Sign in to Chick-fil-A One" onPress={this.handleButtonPress} />
+            <MainActionButton
+              type={constants.actionButtonTypes.BUTTON_TYPE_RED}
+              label="Sign in to Chick-fil-A One"
+              onPress={this.handleButtonPress}
+            />
           </View>
         </View>
         <View style={styles.fixed}>
