@@ -14,6 +14,9 @@ import AccountHeader from '../../../components/AccountHeader';
 class AccountSignedInScreen extends Component {
   handleNavigateTo = routeName => {
     switch (routeName) {
+      case 'CustomerSupportModalNavigator':
+        this.props.navigation.navigate(routeName);
+        break;
       case 'TermsAndConditions':
         this.props.navigation.navigate(routeName, { isModal: false });
         break;
@@ -47,7 +50,7 @@ class AccountSignedInScreen extends Component {
           />
           <SimpleNavListItem
             label="Customer support"
-            onPress={() => this.handleNavigateTo('CustomerSupport')}
+            onPress={() => this.handleNavigateTo('CustomerSupportModalNavigator')}
           />
           <SimpleNavListItem
             label="Transaction history"

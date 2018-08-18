@@ -2,6 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 
 import AuthenticatedMainTabNavigator from './authenticated/AuthenticatedMainTabNavigator';
 import AuthenticationNavigator from './AuthenticationNavigator';
+import CustomerSupportModalNavigator from './CustomerSupportModalNavigator';
 import MainTabNavigator from './MainTabNavigator';
 import TermsAndConditionsModalNavigator from './TermsAndConditionsModalNavigator';
 
@@ -22,6 +23,12 @@ const RootModalNavigator = createStackNavigator(
     },
     AuthenticationNavigator: {
       screen: AuthenticationNavigator,
+      navigationOptions: () => ({
+        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+      })
+    },
+    CustomerSupportModalNavigator: {
+      screen: CustomerSupportModalNavigator,
       navigationOptions: () => ({
         // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
       })

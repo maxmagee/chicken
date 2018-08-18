@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Dimensions, StatusBar } from 'react-native';
+import { Dimensions, StatusBar, View } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 import PropTypes from 'prop-types';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
@@ -35,6 +36,12 @@ class TermsAndConditionsScreen extends Component {
     StatusBar.setBarStyle('dark-content');
   }
 
+  didFocusHandler = () => {
+    if (this.state.isModal) {
+      StatusBar.setBarStyle('light-content');
+    }
+  };
+
   render() {
     const activeColor = this.state.isModal
       ? colors.modalNavigationHeaderTabActive
@@ -50,24 +57,30 @@ class TermsAndConditionsScreen extends Component {
       : globalStyles.navigationHeaderTabBar;
 
     return (
-      <ScrollableTabView
-        renderTabBar={() => (
-          <TabBar
-            underlineColor={underlineColor}
-            tabBarStyle={tabBarStyle}
-            tabBarTextStyle={[globalStyles.modalNavigationHeaderTabLabel, { color: inactiveColor }]}
-            activeTabTextStyle={[
-              globalStyles.modalNavigationHeaderTabLabel,
-              { color: activeColor }
-            ]}
-            underlineHeight={constants.modalNavigationTabBarUnderlineHeight}
-            tabMargin={TAB_GAP_WIDTH}
-          />
-        )}
-      >
-        <LegalScreen tabLabel={{ label: 'Legal' }} />
-        <LicenseScreen tabLabel={{ label: 'Licenses' }} />
-      </ScrollableTabView>
+      <View style={{ flex: 1 }}>
+        <NavigationEvents onDidFocus={this.didFocusHandler} onDidBlur={this.didBlurHandler} />
+        <ScrollableTabView
+          renderTabBar={() => (
+            <TabBar
+              underlineColor={underlineColor}
+              tabBarStyle={tabBarStyle}
+              tabBarTextStyle={[
+                globalStyles.modalNavigationHeaderTabLabel,
+                { color: inactiveColor }
+              ]}
+              activeTabTextStyle={[
+                globalStyles.modalNavigationHeaderTabLabel,
+                { color: activeColor }
+              ]}
+              underlineHeight={constants.modalNavigationTabBarUnderlineHeight}
+              tabMargin={TAB_GAP_WIDTH}
+            />
+          )}
+        >
+          <LegalScreen tabLabel={{ label: 'Legal' }} />
+          <LicenseScreen tabLabel={{ label: 'Licenses' }} />
+        </ScrollableTabView>
+      </View>
     );
   }
 }
