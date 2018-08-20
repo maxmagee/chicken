@@ -39,7 +39,6 @@ class AuthModeScreen extends Component {
             <Image source={sun} height={160} width={160} />
           </View>
           <EllipsisCallout
-            backgroundColor={colors.lightBlue}
             largeText="Let's get started"
             emphasizedText="SIGN IN TO CHICK-FIL-A ONE"
           />
