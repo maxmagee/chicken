@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
-import { Ionicons, MaterialCommunityIcons, Octicons, SimpleLineIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 import { colors, globalStyles } from '../globalStyles';
 
@@ -28,7 +28,9 @@ const MainTabNavigator = createBottomTabNavigator(
       screen: RewardsNavigator,
       navigationOptions: {
         tabBarLabel: 'Rewards',
-        tabBarIcon: ({ tintColor }) => <Octicons name="gift" size={tabIconSize} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => (
+          <MaterialCommunityIcons name="gift" size={tabIconSize} color={tintColor} />
+        )
       }
     },
     ScanTab: {
