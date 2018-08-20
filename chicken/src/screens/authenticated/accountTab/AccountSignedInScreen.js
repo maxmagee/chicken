@@ -15,6 +15,7 @@ class AccountSignedInScreen extends Component {
   handleNavigateTo = routeName => {
     switch (routeName) {
       case 'CustomerSupportModalNavigator':
+      case 'PastRewards':
       case 'Settings':
         this.props.navigation.navigate(routeName);
         break;

@@ -141,7 +141,6 @@ class EmailSignInScreen extends Component {
             </View>
             <EllipsisCallout
               containerStyle={styles.ellipsisContainer}
-              backgroundColor={colors.lightBlue}
               largeText="Let's get started"
               emphasizedText="SIGN IN TO CHICK-FIL-A ONE"
             />
