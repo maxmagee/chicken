@@ -7,6 +7,7 @@ import HeaderLeftButton from '../../../components/navigationHeader/HeaderLeftBut
 
 import AccountSignedInScreen from '../../../screens/authenticated/accountTab/AccountSignedInScreen';
 import TermsAndConditionsScreen from '../../../screens/accountTab/TermsAndConditionsScreen';
+import SettingsScreen from '../../../screens/authenticated/accountTab/SettingsScreen';
 
 const AuthenticatedAccountNavigator = createStackNavigator(
   {
@@ -23,6 +24,16 @@ const AuthenticatedAccountNavigator = createStackNavigator(
       screen: TermsAndConditionsScreen,
       navigationOptions: ({ navigation }) => ({
         title: 'Terms & Conditions',
+        headerTitleStyle: globalStyles.navigationHeaderTitle,
+        headerStyle: globalStyles.navigationHeaderStyle,
+        headerTintColor: colors.darkGray,
+        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+      })
+    },
+    Settings: {
+      screen: SettingsScreen,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Settings',
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
