@@ -9,6 +9,7 @@ import AccountSignedInScreen from '../../../screens/authenticated/accountTab/Acc
 import PastRewardsScreen from '../../../screens/authenticated/accountTab/PastRewardsScreen';
 import SettingsScreen from '../../../screens/authenticated/accountTab/SettingsScreen';
 import TermsAndConditionsScreen from '../../../screens/accountTab/TermsAndConditionsScreen';
+import TransactionHistoryScreen from '../../../screens/accountTab/TransactionHistoryScreen';
 
 const AuthenticatedAccountNavigator = createStackNavigator(
   {
@@ -45,6 +46,16 @@ const AuthenticatedAccountNavigator = createStackNavigator(
       screen: TermsAndConditionsScreen,
       navigationOptions: ({ navigation }) => ({
         title: 'Terms & Conditions',
+        headerTitleStyle: globalStyles.navigationHeaderTitle,
+        headerStyle: globalStyles.navigationHeaderStyle,
+        headerTintColor: colors.darkGray,
+        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+      })
+    },
+    TransactionHistory: {
+      screen: TransactionHistoryScreen,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Transaction History',
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
