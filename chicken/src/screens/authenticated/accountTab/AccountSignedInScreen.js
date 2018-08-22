@@ -17,6 +17,7 @@ class AccountSignedInScreen extends Component {
       case 'CustomerSupportModalNavigator':
       case 'PastRewards':
       case 'Settings':
+      case 'TransactionHistory':
         this.props.navigation.navigate(routeName);
         break;
       case 'TermsAndConditions':
@@ -56,7 +57,7 @@ class AccountSignedInScreen extends Component {
           />
           <SimpleNavListItem
             label="Transaction history"
-            onPress={() => this.handleNavigateTo('TransactionHistoryNavigator')}
+            onPress={() => this.handleNavigateTo('TransactionHistory')}
           />
           <SimpleNavListItem
             label="Past rewards"
