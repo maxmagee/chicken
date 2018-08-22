@@ -5,7 +5,7 @@ import { globalStyles } from '../../globalStyles';
 import ScanScreen from '../../../screens/authenticated/scanTab/ScanScreen';
 
 const AuthenticatedScanNavigator = createStackNavigator({
-  Rewards: {
+  Scan: {
     screen: ScanScreen,
     navigationOptions: () => ({
       title: 'Scan',

@@ -50,7 +50,7 @@ const globalStyles = {
   modalNavigationHeaderTabBar: {
     backgroundColor: colors.modalNavigationHeaderBackground,
     marginTop: 0,
-    paddingTop: 13,
+    paddingTop: 14,
     borderBottomColor: colors.white,
     borderStyle: 'solid',
     height: 39
@@ -76,9 +76,8 @@ const globalStyles = {
   navigationHeaderTabBar: {
     backgroundColor: colors.navigationHeaderBackground,
     marginTop: 0,
-    paddingTop: 13,
-    borderBottomColor: colors.navigationHeaderBackground,
-    borderStyle: 'solid',
+    paddingTop: 14,
+    borderWidth: 0,
     height: 39
   },
   navigationHeaderTitle: {
