@@ -5,26 +5,41 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { colors, globalStyles } from '../config/globalStyles';
 
-const EllipsisCallout = props => (
-  <View style={[styles.container, props.containerStyle]}>
-    <View style={styles.largeTextContainer}>
-      <Text style={[globalStyles.callout, styles.largeText]}>{props.largeText}</Text>
+const EllipsisCallout = props => {
+  const textColor = props.textColor || colors.darkGray;
+
+  return (
+    <View style={[styles.container, props.containerStyle]}>
+      <View style={styles.largeTextContainer}>
+        <Text style={[globalStyles.callout, styles.largeText, { color: textColor }]}>
+          {props.largeText}
+        </Text>
+      </View>
+      <View style={styles.ellipsisContainer}>
+        <Text style={[styles.ellipsisText, { color: textColor }]}>. . .</Text>
+      </View>
+      <View style={styles.emphasizedTextContainer}>
+        <Text
+          style={[
+            globalStyles.calloutEmphasized,
+            styles.emphasizedText,
+            props.emphasizedTextStyle,
+            { color: textColor }
+          ]}
+        >
+          {props.emphasizedText}
+        </Text>
+      </View>
     </View>
-    <View style={styles.ellipsisContainer}>
-      <Text style={styles.ellipsisText}>. . .</Text>
-    </View>
-    <View style={styles.emphasizedTextContainer}>
-      <Text style={[globalStyles.calloutEmphasized, styles.emphasizedText]}>
-        {props.emphasizedText}
-      </Text>
-    </View>
-  </View>
-);
+  );
+};
 
 EllipsisCallout.propTypes = {
   containerStyle: PropTypes.number,
+  emphasizedText: PropTypes.string.isRequired,
+  emphasizedTextStyle: PropTypes.number,
   largeText: PropTypes.string.isRequired,
-  emphasizedText: PropTypes.string.isRequired
+  textColor: PropTypes.string
 };
 
 const styles = EStyleSheet.create({
@@ -36,14 +51,12 @@ const styles = EStyleSheet.create({
     alignSelf: 'center'
   },
   largeText: {
-    color: colors.darkGray,
     textAlign: 'center'
   },
   ellipsisContainer: {
     paddingVertical: 10
   },
   ellipsisText: {
-    color: colors.darkGray,
     fontFamily: 'Times New Roman',
     fontSize: 20,
     fontWeight: 'bold',
@@ -52,7 +65,6 @@ const styles = EStyleSheet.create({
   },
   emphasizedTextContainer: {},
   emphasizedText: {
-    color: colors.darkGray,
     fontSize: 13
   }
 });
