@@ -52,6 +52,7 @@ class ScanScreen extends Component {
             />
           )}
           onChangeTab={this.handleChangeTab}
+          prerenderingSiblingsNumber={Infinity}
         >
           <ScanAndPayScreen tabLabel={{ label: 'Scan & Pay' }} />
           <AddFundsScreen tabLabel={{ label: 'Add funds' }} navigation={this.props.navigation} />

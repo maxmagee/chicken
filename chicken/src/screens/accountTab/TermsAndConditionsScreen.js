@@ -76,6 +76,7 @@ class TermsAndConditionsScreen extends Component {
               tabMargin={TAB_GAP_WIDTH}
             />
           )}
+          prerenderingSiblingsNumber={Infinity}
         >
           <LegalScreen tabLabel={{ label: 'Legal' }} />
           <LicenseScreen tabLabel={{ label: 'Licenses' }} />
