@@ -18,6 +18,14 @@ const TOTAL_WIDTH = Dimensions.get('window').width;
 const TAB_GAP_WIDTH = (TOTAL_WIDTH - ALL_TABS_WIDTH) / (TOTAL_NUMBER_OF_TABS + 1);
 
 class ScanScreen extends Component {
+  handleChangeTab = tab => {
+    if (tab.i === 0) {
+      this.props.navigation.setParams({ title: 'Scan' });
+    } else {
+      this.props.navigation.setParams({ title: 'Add funds' });
+    }
+  };
+
   render() {
     const activeColor = colors.navigationHeaderTabActive;
     const inactiveColor = colors.navigationHeaderTabInactive;
@@ -43,9 +51,10 @@ class ScanScreen extends Component {
               tabMargin={TAB_GAP_WIDTH}
             />
           )}
+          onChangeTab={this.handleChangeTab}
         >
           <ScanAndPayScreen tabLabel={{ label: 'Scan & Pay' }} />
-          <AddFundsScreen tabLabel={{ label: 'Add funds' }} />
+          <AddFundsScreen tabLabel={{ label: 'Add funds' }} navigation={this.props.navigation} />
         </ScrollableTabView>
       </View>
     );

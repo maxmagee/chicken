@@ -7,8 +7,8 @@ import ScanScreen from '../../../screens/authenticated/scanTab/ScanScreen';
 const AuthenticatedScanNavigator = createStackNavigator({
   Scan: {
     screen: ScanScreen,
-    navigationOptions: () => ({
-      title: 'Scan',
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.getParam('title', 'Scan'),
       headerTitleStyle: globalStyles.navigationHeaderTitle,
       headerStyle: globalStyles.navigationHeaderStyle
     })
