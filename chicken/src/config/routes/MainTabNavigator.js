@@ -6,7 +6,7 @@ import { Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-
 import { colors, globalStyles } from '../globalStyles';
 
 import AccountNavigator from './AccountNavigator';
-import MenuTabScreen from '../../screens/mainTabs/MenuTabScreen';
+import MenuWelcomeScreen from '../../screens/menuTab/MenuWelcomeScreen';
 import MyOrderNavigator from './MyOrderNavigator';
 import RewardsNavigator from './RewardsNavigator';
 import ScanNavigator from './ScanNavigator';
@@ -16,7 +16,7 @@ const tabIconSize = 26;
 const MainTabNavigator = createBottomTabNavigator(
   {
     MenuTab: {
-      screen: MenuTabScreen,
+      screen: MenuWelcomeScreen,
       navigationOptions: {
         tabBarLabel: 'Menu',
         tabBarIcon: ({ tintColor }) => (

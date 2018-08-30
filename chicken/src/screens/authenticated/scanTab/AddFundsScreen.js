@@ -3,6 +3,7 @@ import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import constants from '../../../config/constants';
 import { colors } from '../../../config/globalStyles';
 
 import CircleButton from '../../../components/buttons/CircleButton';
@@ -105,7 +106,7 @@ class AddFundsScreen extends Component {
       return (
         <View style={styles.actionButtonContainer}>
           <MainActionButton
-            type="red"
+            type={constants.actionButtonTypes.BUTTON_TYPE_RED}
             label="Choose a payment method"
             onPress={this.handlePaymentMethodPress}
           />
