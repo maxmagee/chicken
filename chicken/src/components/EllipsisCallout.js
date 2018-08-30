@@ -63,9 +63,13 @@ const styles = EStyleSheet.create({
     textAlign: 'center',
     marginTop: -14 // centers the '...' in the middle container
   },
-  emphasizedTextContainer: {},
+  emphasizedTextContainer: {
+    width: 245,
+    alignSelf: 'center'
+  },
   emphasizedText: {
-    fontSize: 13
+    fontSize: 13,
+    lineHeight: 20
   }
 });
 
