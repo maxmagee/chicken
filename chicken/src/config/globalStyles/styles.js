@@ -51,7 +51,8 @@ const globalStyles = {
     backgroundColor: colors.modalNavigationHeaderBackground,
     marginTop: 0,
     paddingTop: 14,
-    borderBottomColor: colors.white,
+    borderBottomColor: colors.modalNavigationHeaderBackground,
+    borderBottomWidth: 0,
     borderStyle: 'solid',
     height: 39
   },

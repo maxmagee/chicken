@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, ImageBackground, SafeAreaView, Text, View } from 'react-native';
+import { ImageBackground, SafeAreaView, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { WebBrowser } from 'expo';
@@ -78,10 +78,7 @@ class MenuWelcomeScreen extends Component {
   };
 
   startOrder = () => {
-    Alert.alert(
-      `We're Sorry!`,
-      `Starting an order is not available yet. Please check again later.`
-    );
+    this.props.navigation.navigate('LocationNavigator');
   };
 
   renderActionButton = () => (

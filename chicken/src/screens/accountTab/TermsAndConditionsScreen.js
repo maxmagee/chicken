@@ -58,7 +58,7 @@ class TermsAndConditionsScreen extends Component {
 
     return (
       <View style={{ flex: 1 }}>
-        <NavigationEvents onDidFocus={this.didFocusHandler} onDidBlur={this.didBlurHandler} />
+        <NavigationEvents onDidFocus={this.didFocusHandler} />
         <ScrollableTabView
           renderTabBar={() => (
             <TabBar
