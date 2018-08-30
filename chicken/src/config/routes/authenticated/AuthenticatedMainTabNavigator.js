@@ -6,19 +6,18 @@ import { Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-
 import { colors, globalStyles } from '../../globalStyles';
 
 import AuthenticatedAccountNavigator from './AuthenticatedAccountNavigator';
-import AuthenticatedMenuNavigator from './AuthenticatedMenuNavigator';
 import AuthenticatedMyOrderNavigator from './AuthenticatedMyOrderNavigator';
 import AuthenticatedRewardsNavigator from './AuthenticatedRewardsNavigator';
 import AuthenticatedScanNavigator from './AuthenticatedScanNavigator';
 
-import MenuTabScreen from '../../../screens/mainTabs/MenuTabScreen';
+import MenuWelcomeScreen from '../../../screens/menuTab/MenuWelcomeScreen';
 
 const tabIconSize = 26;
 
 const AuthenticatedMainTabNavigator = createBottomTabNavigator(
   {
     AuthenticatedMenuTab: {
-      screen: MenuTabScreen,
+      screen: MenuWelcomeScreen,
       navigationOptions: {
         tabBarLabel: 'Menu',
         tabBarIcon: ({ tintColor }) => (
