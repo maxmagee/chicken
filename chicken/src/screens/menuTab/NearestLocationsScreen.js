@@ -61,9 +61,9 @@ class NearestLocationsScreen extends Component {
           initialRegion={this.getInitialRegion()}
           region={this.state.region}
           onRegionChange={this.handleRegionChange}
-        >
-          <MapView.Marker coordinate={this.state.currentLocation} title="Current location" />
-        </MapView>
+          showsUserLocation
+          legalLabelInsets={{ bottom: 20, left: 20 }}
+        />
       </View>
     );
   }
