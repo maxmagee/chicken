@@ -3,6 +3,8 @@ import { View } from 'react-native';
 import { Location, MapView, Permissions } from 'expo';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import { addDistanceToEachLocation, getLocationsWithinRadius } from '../../helpers/locations';
+
 class NearestLocationsScreen extends Component {
   constructor(props) {
     super(props);
@@ -12,12 +14,14 @@ class NearestLocationsScreen extends Component {
         latitude: 37.78825,
         longitude: -122.4324
       },
+      locations: [],
       region: this.getInitialRegion()
     };
   }
 
-  componentDidMount() {
-    this.getLocationAsync();
+  async componentDidMount() {
+    await this.getLocationAsync();
+    this.getNearestLocations();
   }
 
   getInitialRegion = () => {
@@ -51,7 +55,36 @@ class NearestLocationsScreen extends Component {
     });
   };
 
+  // Starting at 5 miles, we keep expanding the radius looking for nearby locations
+  getNearestLocations = () => {
+    console.log('entered getNearestLocations');
+    console.log('currentLocation', this.state.currentLocation);
+    const locationsWithDistance = addDistanceToEachLocation(this.state.currentLocation);
+    let filteredLocations = [];
+    let radiusInMiles = 5;
+
+    while (filteredLocations.length === 0 && radiusInMiles <= 2000) {
+      filteredLocations = getLocationsWithinRadius(locationsWithDistance, radiusInMiles);
+      radiusInMiles += 5;
+    }
+
+    console.log('exiting getNearestLocations with state.locations: ', filteredLocations);
+    this.setState({
+      locations: filteredLocations
+    });
+  };
+
   handleRegionChange = () => {};
+
+  renderLocationMarkers = locations => {
+    return locations.map(location => (
+      <MapView.Marker
+        key={location.id}
+        coordinate={{ latitude: Number(location.latitude), longitude: Number(location.longitude) }}
+        title={`${location.name}: ${location.distance} miles`}
+      />
+    ));
+  };
 
   render() {
     return (
@@ -63,7 +96,9 @@ class NearestLocationsScreen extends Component {
           onRegionChange={this.handleRegionChange}
           showsUserLocation
           legalLabelInsets={{ bottom: 20, left: 20 }}
-        />
+        >
+          {this.renderLocationMarkers(this.state.locations)}
+        </MapView>
       </View>
     );
   }
