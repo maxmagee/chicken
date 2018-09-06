@@ -22,6 +22,22 @@ class NearestLocationsScreen extends Component {
   async componentDidMount() {
     await this.getLocationAsync();
     this.getNearestLocations();
+    //this.map.fitToElements(true);
+  }
+
+  componentDidUpdate() {
+    const coordinatesToFit = this.state.locations.map(location => location);
+    coordinatesToFit.push(this.state.currentLocation);
+
+    this.mapRef.fitToCoordinates(coordinatesToFit, {
+      edgePadding: {
+        top: 20,
+        right: 20,
+        bottom: 20,
+        left: 20
+      },
+      animated: true
+    });
   }
 
   getInitialRegion = () => {
@@ -57,8 +73,6 @@ class NearestLocationsScreen extends Component {
 
   // Starting at 5 miles, we keep expanding the radius looking for nearby locations
   getNearestLocations = () => {
-    console.log('entered getNearestLocations');
-    console.log('currentLocation', this.state.currentLocation);
     const locationsWithDistance = addDistanceToEachLocation(this.state.currentLocation);
     let filteredLocations = [];
     let radiusInMiles = 5;
@@ -68,7 +82,6 @@ class NearestLocationsScreen extends Component {
       radiusInMiles += 5;
     }
 
-    console.log('exiting getNearestLocations with state.locations: ', filteredLocations);
     this.setState({
       locations: filteredLocations
     });
@@ -90,6 +103,9 @@ class NearestLocationsScreen extends Component {
     return (
       <View style={styles.container}>
         <MapView
+          ref={ref => {
+            this.mapRef = ref;
+          }}
           style={styles.map}
           initialRegion={this.getInitialRegion()}
           region={this.state.region}
