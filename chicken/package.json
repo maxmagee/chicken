@@ -12,6 +12,8 @@
     "aws-amplify": "^1.0.6",
     "aws-amplify-react-native": "^1.0.6",
     "expo": "^29.0.0",
+    "haversine": "^1.1.0",
+    "haversine-distance": "^1.1.4",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
