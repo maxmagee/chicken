@@ -1,27 +1,25 @@
 {
   "expo": {
     "name": "chicken",
-    "description": "This project is really great.",
+    "description": "A replication of Chick-fil-A's app using React Native.",
     "slug": "chicken",
     "privacy": "public",
     "sdkVersion": "29.0.0",
-    "platforms": ["ios", "android"],
-    "version": "1.0.0",
+    "platforms": ["ios"],
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#DE0031"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     }
   }
 }
