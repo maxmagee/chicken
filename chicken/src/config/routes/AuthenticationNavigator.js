@@ -17,7 +17,8 @@ const AuthenticationNavigator = createStackNavigator(
         headerLeft: () => {
           return <HeaderLeftButton type="close" color={colors.darkBlue} navigation={navigation} />;
         },
-        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue)
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue),
+        title: ''
       })
     },
     EmailSignIn: {
@@ -26,7 +27,8 @@ const AuthenticationNavigator = createStackNavigator(
         headerLeft: () => {
           return (<HeaderLeftButton type="back" color={colors.darkBlue} navigation={navigation} />);
         },
-        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue)
+        headerStyle: globalStyles.getModalNavigationHeaderStyle(colors.lightBlue),
+        title: ''
       })
     },
     EmailSignUp: {
