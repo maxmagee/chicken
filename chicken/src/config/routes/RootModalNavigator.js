@@ -1,4 +1,5 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 
 import AuthenticatedMainTabNavigator from './authenticated/AuthenticatedMainTabNavigator';
 import AuthenticationNavigator from './AuthenticationNavigator';
@@ -48,4 +49,4 @@ const RootModalNavigator = createStackNavigator(
   }
 );
 
-export default RootModalNavigator;
+export default createAppContainer(RootModalNavigator);
