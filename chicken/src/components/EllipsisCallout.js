@@ -37,7 +37,7 @@ const EllipsisCallout = props => {
 EllipsisCallout.propTypes = {
   containerStyle: ViewPropTypes.style,
   emphasizedText: PropTypes.string.isRequired,
-  emphasizedTextStyle: PropTypes.number,
+  emphasizedTextStyle: Text.propTypes.style,
   largeText: PropTypes.string.isRequired,
   textColor: PropTypes.string
 };
