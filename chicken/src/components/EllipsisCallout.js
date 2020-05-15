@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -35,7 +35,7 @@ const EllipsisCallout = props => {
 };
 
 EllipsisCallout.propTypes = {
-  containerStyle: PropTypes.number,
+  containerStyle: ViewPropTypes.style,
   emphasizedText: PropTypes.string.isRequired,
   emphasizedTextStyle: PropTypes.number,
   largeText: PropTypes.string.isRequired,
