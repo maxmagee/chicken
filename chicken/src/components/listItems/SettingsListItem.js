@@ -16,7 +16,7 @@ const SettingsListItem = props => (
         <Switch
           style={styles.switch}
           value={props.value}
-          onTintColor={colors.darkBlue}
+          trackColor={{ true: colors.darkBlue }}
           onValueChange={props.onValueChange}
         />
       </View>
