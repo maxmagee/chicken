@@ -14,31 +14,31 @@ const RootModalNavigator = createStackNavigator(
     AuthenticatedMainTabNavigator: {
       screen: AuthenticatedMainTabNavigator,
       navigationOptions: () => ({
-        gesturesEnabled: false
+        gestureEnabled: false
       })
     },
     TermsAndConditionsModalNavigator: {
       screen: TermsAndConditionsModalNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     AuthenticationNavigator: {
       screen: AuthenticationNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     CustomerSupportModalNavigator: {
       screen: CustomerSupportModalNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     LocationNavigator: {
       screen: LocationNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     }
   },
