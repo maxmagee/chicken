@@ -69,7 +69,21 @@ class EmailSignInScreen extends Component {
     });
   };
 
+  openAuthenticatedView = () => {
+    this.props.navigation.navigate('AuthenticatedMainTabNavigator');
+  }
+
   handleSignIn = () => {
+    Alert.alert('Uh Oh!', 'AWS Cognito authentication is not currently available.', [
+      { style: 'cancel', text: 'Okay' },
+      { style: 'destructive', text: 'Fake It', onPress: this.openAuthenticatedView }
+    ]);
+    return;
+    // this.authenticate();
+  };
+
+  // AWS Authentication doesn't work anymore and I haven't had time to fix it.
+  authenticate = () => {
     Auth.signIn(this.state.emailAddress, this.state.password)
       .then(response => {
         const { payload } = response.signInUserSession.idToken;
@@ -85,7 +99,7 @@ class EmailSignInScreen extends Component {
         Alert.alert(`Error`, `${err.message}`);
         console.log('Sign In Error: ', err);
       });
-  };
+  }
 
   handleTogglePassword = () => {
     this.setState(prevState => ({
