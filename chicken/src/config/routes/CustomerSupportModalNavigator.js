@@ -14,7 +14,9 @@ const CustomerSupportModalNavigator = createStackNavigator({
       title: 'Customer support',
       headerTitleStyle: globalStyles.modalNavigationHeaderTitle,
       headerStyle: globalStyles.getModalNavigationHeaderStyle(),
-      headerLeft: <HeaderLeftButton type="close" color={colors.white} navigation={navigation} />
+      headerLeft: () => {
+        return (<HeaderLeftButton type="close" color={colors.white} navigation={navigation} />);
+      },
     })
   }
 });
