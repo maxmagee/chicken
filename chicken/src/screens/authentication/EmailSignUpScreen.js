@@ -87,6 +87,9 @@ class EmailSignUpScreen extends Component {
 
   handleSignUp = () => {
     if (this.formIsValid()) {
+      Alert.alert('Uh Oh!', 'AWS Cognito authentication is not currently available.', [{ title: 'Okay' }]);
+      return;
+      // AWS Authentication doesn't work anymore and I haven't had time to fix it.
       Auth.signUp({
         username: this.state.emailAddress,
         password: this.state.password,
@@ -103,9 +106,8 @@ class EmailSignUpScreen extends Component {
           Alert.alert(`Error!`, `${err.message}`);
           console.log('Email Sign Up Error: ', err);
         });
-    } else {
+    } 
       Alert.alert(`Uh Oh!`, `There are problems with the values provided.`);
-    }
   };
 
   formIsValid = () => {

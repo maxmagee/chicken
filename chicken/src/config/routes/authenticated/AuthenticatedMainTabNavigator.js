@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 
 import { colors, globalStyles } from '../../globalStyles';
@@ -21,7 +21,7 @@ const AuthenticatedMainTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Menu',
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-restaurant-outline" size={tabIconSize} color={tintColor} />
+          <Ionicons name="ios-restaurant" size={tabIconSize} color={tintColor} />
         )
       }
     },

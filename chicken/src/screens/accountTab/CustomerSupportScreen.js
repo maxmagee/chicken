@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, Text, View, WebView } from 'react-native';
+import { StatusBar, Text, View } from 'react-native';
+import { WebView } from 'react-native-webview';
 import { NavigationEvents } from 'react-navigation';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { colors } from '../../config/globalStyles';

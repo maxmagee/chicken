@@ -4,7 +4,6 @@
     "description": "A replication of Chick-fil-A's app using React Native.",
     "slug": "chicken",
     "privacy": "public",
-    "sdkVersion": "29.0.0",
     "platforms": ["ios"],
     "version": "0.1.0",
     "orientation": "portrait",

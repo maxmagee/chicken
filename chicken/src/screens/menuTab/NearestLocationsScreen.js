@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Location, MapView, Permissions } from 'expo';
+import * as Permissions from 'expo-permissions';
+import * as Location from 'expo-location';
+import MapView from 'react-native-maps';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { addDistanceToEachLocation, getLocationsWithinRadius } from '../../helpers/locations';

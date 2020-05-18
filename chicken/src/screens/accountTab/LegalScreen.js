@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, WebView } from 'react-native';
+import { Text, View } from 'react-native';
+import { WebView } from 'react-native-webview';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { colors } from '../../config/globalStyles';
 
