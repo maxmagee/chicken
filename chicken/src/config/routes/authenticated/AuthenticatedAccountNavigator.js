@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import { colors, globalStyles } from '../../globalStyles';
 
@@ -29,7 +29,9 @@ const AuthenticatedAccountNavigator = createStackNavigator(
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
-        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+        headerLeft: () => {
+          return (<HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />);   
+        },
       })
     },
     Settings: {
@@ -39,7 +41,9 @@ const AuthenticatedAccountNavigator = createStackNavigator(
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
-        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+        headerLeft: () => {
+          return (<HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />);   
+        },
       })
     },
     TermsAndConditions: {
@@ -49,7 +53,9 @@ const AuthenticatedAccountNavigator = createStackNavigator(
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
-        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+        headerLeft: () => {
+          return (<HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />);   
+        },
       })
     },
     TransactionHistory: {
@@ -59,7 +65,9 @@ const AuthenticatedAccountNavigator = createStackNavigator(
         headerTitleStyle: globalStyles.navigationHeaderTitle,
         headerStyle: globalStyles.navigationHeaderStyle,
         headerTintColor: colors.darkGray,
-        headerLeft: <HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />
+        headerLeft: () => {
+          return (<HeaderLeftButton type="back" color={colors.darkGray} navigation={navigation} />);   
+        },
       })
     }
   },

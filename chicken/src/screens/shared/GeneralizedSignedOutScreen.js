@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground, Text, View } from 'react-native';
+import { ImageBackground, Text, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -46,7 +46,7 @@ class GeneralizedSignedOutScreen extends Component {
 GeneralizedSignedOutScreen.propTypes = {
   callout: PropTypes.string,
   children: PropTypes.element,
-  childStyles: PropTypes.number,
+  childStyles: ViewPropTypes.style,
   image: PropTypes.number.isRequired,
   mainText: PropTypes.string,
   navigation: PropTypes.object.isRequired

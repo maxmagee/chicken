@@ -1,4 +1,5 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 
 import AuthenticatedMainTabNavigator from './authenticated/AuthenticatedMainTabNavigator';
 import AuthenticationNavigator from './AuthenticationNavigator';
@@ -13,31 +14,31 @@ const RootModalNavigator = createStackNavigator(
     AuthenticatedMainTabNavigator: {
       screen: AuthenticatedMainTabNavigator,
       navigationOptions: () => ({
-        gesturesEnabled: false
+        gestureEnabled: false
       })
     },
     TermsAndConditionsModalNavigator: {
       screen: TermsAndConditionsModalNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     AuthenticationNavigator: {
       screen: AuthenticationNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     CustomerSupportModalNavigator: {
       screen: CustomerSupportModalNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     },
     LocationNavigator: {
       screen: LocationNavigator,
       navigationOptions: () => ({
-        // gesturesEnabled: false  // uncomment this to prevent swipe to dismiss
+        // gestureEnabled: false  // uncomment this to prevent swipe to dismiss
       })
     }
   },
@@ -48,4 +49,4 @@ const RootModalNavigator = createStackNavigator(
   }
 );
 
-export default RootModalNavigator;
+export default createAppContainer(RootModalNavigator);
