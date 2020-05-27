@@ -5,6 +5,12 @@ The goal of this project is to replicate the existing [Chick-fil-A One](https://
 # Screenshots
 <img src="screenshots/iPhoneMockups/menu.png" width="250" /><img src="screenshots/iPhoneMockups/rewards.png" width="250" /><img src="screenshots/iPhoneMockups/scan.png" width="250" /><img src="screenshots/iPhoneMockups/account.png" width="250" /><img src="screenshots/iPhoneMockups/my-order.png" width="250" /><img src="screenshots/iPhoneMockups/sign-in.png" width="250" /><img src="screenshots/iPhoneMockups/create-account.png" width="250" /><img src="screenshots/iPhoneMockups/email.png" width="250" /><img src="screenshots/iPhoneMockups/account-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/settings.png" width="250" /><img src="screenshots/iPhoneMockups/legal.png" width="250" /><img src="screenshots/iPhoneMockups/licenses.png" width="250" /><img src="screenshots/iPhoneMockups/customer-support.png" width="250" /><img src="screenshots/iPhoneMockups/scan-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/add-funds.png" width="250" /><img src="screenshots/iPhoneMockups/transaction-history.png" width="250" /><img src="screenshots/iPhoneMockups/favorite-locations.png" width="250" /><img src="screenshots/iPhoneMockups/nearest-locations.png" width="250" />
 
+## Demo
+
+Two gifs to demonstrate the nearest locations feature and the form behavior during the creation of a new user.
+
+<img src="gifs/nearest-locations.gif" width="250" /><img src="gifs/sign-up.gif" width="250" />
+
 ## Why This?
 
 When I initially started looking for new React Native opportunities in my area, I came across a firm called The BHW Group. On their projects page, they listed an application for [Chick-fil-A](https://thebhwgroup.com/projects/chick-fil-a). I then decided that one way to demonstrate my capabilities as a React Native developer, would be to replicate Chick-fil-A's app as closely as I could. Also, it didn't hurt that I'm a big fan of their food.
