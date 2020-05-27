@@ -1,50 +1,34 @@
-# Chick-fil-A
+# Chicken (Chick-fil-A app)
 
 The goal of this project is to replicate the existing [Chick-fil-A One](https://itunes.apple.com/us/app/chick-fil-a/id488818252?mt=8) mobile application using React Native. This project is designed to illustrate my capabilities as a React Native developer to potential employers.
 
+# Screenshots
+<img src="screenshots/iPhoneMockups/menu.png" width="250" /><img src="screenshots/iPhoneMockups/rewards.png" width="250" /><img src="screenshots/iPhoneMockups/scan.png" width="250" /><img src="screenshots/iPhoneMockups/account.png" width="250" /><img src="screenshots/iPhoneMockups/my-order.png" width="250" /><img src="screenshots/iPhoneMockups/sign-in.png" width="250" /><img src="screenshots/iPhoneMockups/create-account.png" width="250" /><img src="screenshots/iPhoneMockups/email.png" width="250" /><img src="screenshots/iPhoneMockups/account-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/settings.png" width="250" /><img src="screenshots/iPhoneMockups/legal.png" width="250" /><img src="screenshots/iPhoneMockups/licenses.png" width="250" /><img src="screenshots/iPhoneMockups/customer-support.png" width="250" /><img src="screenshots/iPhoneMockups/scan-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/add-funds.png" width="250" /><img src="screenshots/iPhoneMockups/transaction-history.png" width="250" /><img src="screenshots/iPhoneMockups/favorite-locations.png" width="250" /><img src="screenshots/iPhoneMockups/nearest-locations.png" width="250" />
+
 ## Why This?
 
-From what I can tell, the current production Chick-fil-A One app was built using React Native by [The BHW Group](https://thebhwgroup.com/projects/chick-fil-a) located in my home-town of Austin. If I can get reasonably similar results to a current well-respected firm, I've successfully demonstrated my value. Also, I'm a big fan of their food.
+When I initially started looking for new React Native opportunities in my area, I came across a firm called The BHW Group. On their projects page, they listed an application for [Chick-fil-A](https://thebhwgroup.com/projects/chick-fil-a). I then decided that one way to demonstrate my capabilities as a React Native developer, would be to replicate Chick-fil-A's app as closely as I could. Also, it didn't hurt that I'm a big fan of their food.
 
-## Getting Started
+## Development Environment Setup
+  - Install Node.js using your preferred method.
+  - Install the Expo CLI globally
+    -  `npm install -g expo-cli`
+ -  Within the repository (chicken/chicken), run the following commands in Terminal:
+    -  `npm install`
+    -  `npm start`
+    -  It will eventually prompt you to run on a device or simulator. Type `i` and press `enter`.
+       -  This will launch an iPhone simulator (provided you're using a Mac).
+       -  This application was originally optimized for an iPhone 11 Pro.
+    -  You should be able to make changes and save to see them appear.
 
-This application was created using the Expo XDE. The easiest way to get started would be to follow the installation steps below and then use the 'Open Project' option from XDE. From there, you can open the project in an iOS Simulator or send it to your device.
-
-### Prerequisites
-
-Note: While React Native supports developing cross-platform applications, for this project I am solely targeting iOS to streamline my workflow and quicken the development process.
-
-- [Expo XDE](https://github.com/expo/xde/releases)
-- [Expo iOS Client](https://itunes.apple.com/app/apple-store/id982107779)
-
-### Installing
-
-Prior to opening the project in the Expo XDE, you will need to install the project's dependencies.
-
-Navigate a terminal to the project's directory and run:
-
-```
-npm install
-```
-
-Once the node_modules directory is populated, the project should properly open and run via Expo XDE.
-
-## Running the tests
-
-Coming soon.
-
-## Coding Style and Linting
-
-Coding style consistency is important to me. This project was styled based on input from the Prettier plug-in for VSCode as well as an ESLint configuration that I've grown fond of which can be found in the devDependencies of package.json.
-
-## Development
+## Branches
 
 - master: Should be stable and ready to demo at any time.
 - development: Active development directly on this branch as well as merged in from feature branches.
 
-## Deployment
+## Coding Style and Linting
 
-It's likely that I will publish this project to my personal [Expo Projects listing](https://expo.io/@maxmagee), but due to [recent restrictions by Apple](https://blog.expo.io/upcoming-limitations-to-ios-expo-client-8076d01aee1a), it's no longer possible to run Expo projects from other users in the iOS Client. Consequently, publishing there is simply to aide in my personal demos. I will not be publishing this to the App Store for obvious copyright reasons.
+Coding style consistency is important to me. This project was styled based on input from the Prettier plug-in for VSCode as well as an ESLint configuration that I've grown fond of which can be found in the devDependencies of package.json.
 
 ## Designs
 
@@ -57,6 +41,20 @@ Doing this will serve multiple purposes:
 
 The Sketch files are available in the 'designs' directory.
 
+## Nearest Locations
+
+I built a web scraper which can be found [here](https://github.com/maxmagee/chick-fil-a/tree/master/server) to get all of the addresses of all of Chick-fil-A's locations. Once I had those and cleaned up the data, I used a website to convert those addresses to lat/long coordinates. 
+
+With those coordinates, I was then able to have the app find the nearest location(s) using an ever-expanding circle centered around your current location. The location screenshot you see there was not pre-determined, if you simulate or run this at another address, you will get different results.
+
+## Authentication
+
+When I initially built this project, I had e-mail authentication functioning using [AWS Cognito](https://aws.amazon.com/cognito/). There have been several changes in the libraries used since the initial implementation, so I disabled that feature.
+
+## Deployment
+
+It's likely that I will publish this project to my personal [Expo Projects listing](https://expo.io/@maxmagee), but due to [recent restrictions by Apple](https://blog.expo.io/upcoming-limitations-to-ios-expo-client-8076d01aee1a), it's no longer possible to run Expo projects from other users in the iOS Client. Consequently, publishing there is simply to aide in my personal demos. I will not be publishing this to the App Store for obvious copyright reasons.
+
 ## Built With
 
 - [React Native](https://facebook.github.io/react-native/) - A platform to build native apps using JavaScript and React.
@@ -68,10 +66,6 @@ The Sketch files are available in the 'designs' directory.
 ## Authors
 
 - **Max Magee** - [Website](http://maxmagee.com)
-
-## License
-
-Coming soon.
 
 ## Note
 
