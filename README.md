@@ -2,6 +2,9 @@
 
 The goal of this project is to replicate the existing [Chick-fil-A One](https://itunes.apple.com/us/app/chick-fil-a/id488818252?mt=8) mobile application using React Native. This project is designed to illustrate my capabilities as a React Native developer to potential employers.
 
+# Screenshots
+<img src="screenshots/iPhoneMockups/menu.png" width="250" /><img src="screenshots/iPhoneMockups/rewards.png" width="250" /><img src="screenshots/iPhoneMockups/scan.png" width="250" /><img src="screenshots/iPhoneMockups/account.png" width="250" /><img src="screenshots/iPhoneMockups/my-order.png" width="250" /><img src="screenshots/iPhoneMockups/sign-in.png" width="250" /><img src="screenshots/iPhoneMockups/create-account.png" width="250" /><img src="screenshots/iPhoneMockups/email.png" width="250" /><img src="screenshots/iPhoneMockups/account-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/settings.png" width="250" /><img src="screenshots/iPhoneMockups/legal.png" width="250" /><img src="screenshots/iPhoneMockups/licenses.png" width="250" /><img src="screenshots/iPhoneMockups/customer-support.png" width="250" /><img src="screenshots/iPhoneMockups/scan-signed-in.png" width="250" /><img src="screenshots/iPhoneMockups/add-funds.png" width="250" /><img src="screenshots/iPhoneMockups/transaction-history.png" width="250" /><img src="screenshots/iPhoneMockups/favorite-locations.png" width="250" /><img src="screenshots/iPhoneMockups/nearest-locations.png" width="250" />
+
 ## Why This?
 
 From what I can tell, the current production Chick-fil-A One app was built using React Native by [The BHW Group](https://thebhwgroup.com/projects/chick-fil-a) located in my home-town of Austin. If I can get reasonably similar results to a current well-respected firm, I've successfully demonstrated my value. Also, I'm a big fan of their food.
